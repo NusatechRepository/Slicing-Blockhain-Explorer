@@ -1,0 +1,25 @@
+:root {
+  --navy: #001564;
+  --teal: #07b1aa;
+  --dark-blue: #0a5be0;
+  --secondary-blue: #5b8ceb;
+  --dark-navy: #121b51;
+  --dark-gray: #77838f;
+  --slate: #333333;
+  --white: #ffffff;
+  --light-gray: #eff6ff;
+  --light-slate: #afb4bc;
+  --red: #ff4445;
+  --orange: #ef8943;
+  --dark-teal: #24ae8f;
+  --green: #80d6a1;
+}
+
+.card-block {
+  background-color: var(--white);
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--dark-navy);
+  border-left: 5px solid var(--dark-navy);
+}

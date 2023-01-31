@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="validated.styles.css" />
+    <title>Account Page</title>
+  </head>
+  <body>
+    <!-- ================== Header ============ -->
+    <nav class="navbar navbar-expand-lg navbar-light mx-4 py-2">
+      <a class="navbar-brand" href="/">
+        <img src="../../assets/images/logo.png" alt="" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto navbar-item-menu">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle navbar-item"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../../assets/icon/icon_blockchain.svg" alt="" />
+              <span class="ml-2 navbar-link">Block</span>
+            </a>
+            <div class="dropdown-menu p-2">
+              <a
+                class="dropdown-item text-dark-gray"
+                href="../blocks/blocks.html"
+                >Blocks</a
+              >
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item text-dark-gray"
+                href="/pages/uncles/uncles.html"
+                >Uncless</a
+              >
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item text-dark-gray"
+                href="/pages/reogs/reogs.html"
+                >Forked Blocks (Reorgs)</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="#"
+                >Verifed Contract</a
+              >
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle navbar-item"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../../assets/icon/icon_nav_transaction.svg" alt="" />
+              <span class="ml-2 navbar-link">Transaction</span>
+            </a>
+            <div class="dropdown-menu p-2">
+              <a
+                class="dropdown-item text-dark-gray"
+                href="/pages/validated/validated.html"
+                >Validated</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="#">Pending</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a
+              href="../account/account.html"
+              class="nav-link navbar-item active"
+            >
+              <img src="../../assets/icon/icon_user_outline.svg" alt="" />
+              <span class="navbar-link ml-2">Accounts</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              href="../tokens/tokens.html"
+              class="nav-link text-secondary navbar-item"
+            >
+              <img src="../../assets/icon/icon_coin_stack.svg" alt="" />
+              <span class="navbar-link ml-2">Tokens</span>
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle navbar-item"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../../assets/icon/icon_api.svg" alt="" />
+              <span class="ml-2 navbar-link"> API's </span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-left p-2">
+              <a class="dropdown-item text-dark-gray" href="#">GraphQL</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="pages/api/RPC.html"
+                >RPC</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="#">ETH RPC</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img class="" src="../../assets/icon/dot.svg" alt="" />
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg-right p-3">
+              <div>Mainnets</div>
+              <a class="dropdown-item text-center text-dark-gray" href="#">
+                Mainets
+              </a>
+              <div class="dropdown-divider"></div>
+              <div>Testnet</div>
+              <a class="dropdown-item text-center text-dark-gray" href="#">
+                Testnet
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-center" href="#"> Other Networks </a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-secondary">
+              <img src="../../assets/icon/icon_moon.svg" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- ======================== End header -->
+
+    <main>
+      <!-- ================= Banner Section ============= -->
+      <section class="banner-hero">
+        <div class="mx-5 py-5">
+          <div class="card border-0 p-4">
+            <div class="d-flex px-5 py-1">
+              <div class="w-full">
+                <h4 class="mb-3">Nusatech Explorer</h4>
+                <div class="input-group input-group-lg mb-3">
+                  <div class="input-group-prepend">
+                    <button
+                      class="btn button-primary text-white font-weight-normal dropdown-toggle"
+                      type="button"
+                      data-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      All Filters
+                    </button>
+                    <div class="dropdown-menu mt-2 p-2">
+                      <a class="dropdown-item rounded-lg" href="#"
+                        >All Filters</a
+                      >
+                      <a class="dropdown-item rounded-lg" href="#">Address</a>
+                      <a class="dropdown-item rounded-lg" href="#">Tokens</a>
+                      <a class="dropdown-item rounded-lg" href="#">Name Tags</a>
+                      <a class="dropdown-item rounded-lg" href="#">Labels</a>
+                      <a class="dropdown-item rounded-lg" href="#">Websites</a>
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control search-coin"
+                    placeholder="Search by Address / Transaction Hash / Block / Token"
+                    aria-label="Text input with dropdown button"
+                  />
+                  <div class="input-group-append">
+                    <button
+                      class="btn button-teal text-white"
+                      type="button"
+                      id="button-addon2"
+                    >
+                      <img src="../../assets/icon/icon_search.svg" alt="" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <img src="./assets/images/Banner.png" alt="" srcset="" /> -->
+      </section>
+      <!-- ======== End Banner Section ================ -->
+
+      <section class="main-content">
+        <div class="mx-5 py-5">
+          <!-- Card Transaction header -->
+          <div class="card border-0 rounded-md shadow-sm p-4">
+            <div class="d-flex gap-3 align-items-center">
+              <img src="../../assets/icon/icon_fill_person.svg" alt="" />
+              <h5 class="m-0">Account</h5>
+            </div>
+            <p class="text-dark-gray mt-2 m-0">
+              A total of > accounts found (29757) (Showing the last 10,000 top
+              accounts only)
+            </p>
+          </div>
+          <!-- End card transaction header -->
+
+          <!-- Card transaction col -->
+          <div class="mt-4">
+            <div
+              class="d-flex gap-4 justify-content-between align-items-center"
+            >
+              <div class="card w-full border-0 rounded-md shadow-sm p-4">
+                <div class="d-flex gap-3 align-items-center">
+                  <h5 class="m-0">Account Address</h5>
+                </div>
+                <div class="d-flex gap-10 mt-4">
+                  <div>
+                    <p class="text-sm text-dark-gray">Total</p>
+                    <h5 class="m-0">117,986</h5>
+                  </div>
+                  <div>
+                    <p class="text-sm text-dark-gray">24 Hours</p>
+                    <h5 class="m-0 text-teal">
+                      <span
+                        ><svg
+                          width="27"
+                          height="16"
+                          viewBox="0 0 27 16"
+                          fill="none"
+                          class="mr-2"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0.599089 15.0667C0.354644 14.8222 0.232422 14.5164 0.232422 14.1493C0.232422 13.7831 0.354644 13.4667 0.599089 13.2L8.59909 5.13333C8.73242 5.02222 8.87687 4.93333 9.03242 4.86667C9.18798 4.8 9.35464 4.76667 9.53242 4.76667C9.7102 4.76667 9.88264 4.8 10.0498 4.86667C10.216 4.93333 10.3546 5.02222 10.4658 5.13333L14.8658 9.53333L21.7991 2.66667H19.6658C19.288 2.66667 18.9715 2.53911 18.7164 2.284C18.4604 2.028 18.3324 1.71111 18.3324 1.33333C18.3324 0.955556 18.4604 0.638667 18.7164 0.382667C18.9715 0.127556 19.288 0 19.6658 0H24.9991C25.3769 0 25.6933 0.127556 25.9484 0.382667C26.2044 0.638667 26.3324 0.955556 26.3324 1.33333V6.66667C26.3324 7.04444 26.2044 7.36089 25.9484 7.616C25.6933 7.872 25.3769 8 24.9991 8C24.6213 8 24.3049 7.872 24.0498 7.616C23.7938 7.36089 23.6658 7.04444 23.6658 6.66667V4.53333L15.7991 12.4C15.6658 12.5333 15.5213 12.6276 15.3658 12.6827C15.2102 12.7387 15.0435 12.7667 14.8658 12.7667C14.688 12.7667 14.5213 12.7387 14.3658 12.6827C14.2102 12.6276 14.0658 12.5333 13.9324 12.4L9.53242 8L2.43242 15.1C2.18798 15.3444 1.88798 15.4667 1.53242 15.4667C1.17687 15.4667 0.865755 15.3333 0.599089 15.0667Z"
+                            fill="#07B1AA"
+                          />
+                        </svg>
+                      </span>
+                      698,334
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="card w-full border-0 rounded-md shadow-sm p-4">
+                <div class="d-flex gap-3 align-items-center">
+                  <h5 class="m-0">Active Accounts</h5>
+                </div>
+                <div class="d-flex gap-10 mt-4">
+                  <div>
+                    <p class="text-sm text-dark-gray">Daily Activate Acc</p>
+                    <h5 class="m-0">1,458,478</h5>
+                  </div>
+                  <div>
+                    <p class="text-sm text-dark-gray">24 Hours</p>
+                    <h5 class="m-0 text-red">
+                      <span>
+                        <svg
+                          width="27"
+                          height="16"
+                          viewBox="0 0 27 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M19.6659 15.9997C19.2881 15.9997 18.9717 15.8717 18.7166 15.6157C18.4606 15.3606 18.3326 15.0442 18.3326 14.6664C18.3326 14.2886 18.4606 13.9722 18.7166 13.7171C18.9717 13.4611 19.2881 13.3331 19.6659 13.3331H21.7992L14.8659 6.46641L10.4659 10.8664C10.3548 10.9775 10.2161 11.0664 10.0499 11.1331C9.88277 11.1997 9.71033 11.2331 9.53255 11.2331C9.35477 11.2331 9.18811 11.1997 9.03255 11.1331C8.877 11.0664 8.73255 10.9775 8.59922 10.8664L0.565885 2.76641C0.321441 2.52196 0.199219 2.22196 0.199219 1.86641C0.199219 1.51085 0.332552 1.19974 0.599219 0.933072C0.843663 0.688628 1.15477 0.566406 1.53255 0.566406C1.91033 0.566406 2.22144 0.688628 2.46588 0.933072L9.53255 7.99974L13.9326 3.59974C14.0659 3.46641 14.2103 3.37174 14.3659 3.31574C14.5214 3.26063 14.6881 3.23307 14.8659 3.23307C15.0437 3.23307 15.2103 3.26063 15.3659 3.31574C15.5214 3.37174 15.6659 3.46641 15.7992 3.59974L23.6659 11.4664V9.33307C23.6659 8.9553 23.7939 8.63841 24.0499 8.38241C24.305 8.12729 24.6214 7.99974 24.9992 7.99974C25.377 7.99974 25.6934 8.12729 25.9486 8.38241C26.2046 8.63841 26.3326 8.9553 26.3326 9.33307V14.6664C26.3326 15.0442 26.2046 15.3606 25.9486 15.6157C25.6934 15.8717 25.377 15.9997 24.9992 15.9997H19.6659Z"
+                            fill="#FF4445"
+                          />
+                        </svg>
+                      </span>
+                      4,998,612
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- End card transaction col -->
+
+          <div class="mt-5">
+            <div
+              class="bg-white w-full rounded-lg overflow-hidden border-0 shadow-sm"
+            >
+              <table class="table bg-white border-0 p-5">
+                <thead class="text-dark-gray">
+                  <tr class="">
+                    <th scope="col" class="font-light border-top-0 py-3">
+                      Rank Account
+                    </th>
+                    <th scope="col" class="font-light border-top-0 py-3">
+                      Address Account
+                    </th>
+                    <th scope="col" class="font-light border-top-0 py-3">
+                      Name Tag
+                    </th>
+                    <th
+                      scope="col"
+                      class="font-light border-top-0 py-3 text-center"
+                    >
+                      Balance
+                    </th>
+                    <th scope="col" class="font-light border-top-0 py-3">
+                      Transaction Count
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="text-teal font-light">
+                      <a href="#" class="text-dark-blue">#1</a>
+                    </th>
+                    <td class="text-teal">0x661d0f14fbc850650...</td>
+                    <td class="text-slate">-</td>
+                    <td class="text-slate">47,845 CTNFT</td>
+                    <td class="text-slate">19 Transactions Sent</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer mt-auto">
+      <div class="px-4 py-5">
+        <div class="d-flex">
+          <div class="col-3">
+            <h5 class="banner-hero-brand mb-3">
+              <span class="text-white">Nusa</span>
+              <span class="text-teal">Explorer</span>
+            </h5>
+            <p class="text-white">
+              Nusa<span class="text-teal">explorer</span> is a tool for
+              inspecting and analyzing EVM based blockchains. Blockchain
+              explorer for Ethereum Networks.
+            </p>
+          </div>
+          <div class="col-2">
+            <h6 class="text-white">Nusaexplorer</h6>
+            <div class="pl-3">
+              <ul>
+                <li class="text-white mb-2 text-sm">Submit an Issue</li>
+                <li class="text-white mb-2 text-sm">Contribute</li>
+                <li class="text-white mb-2 text-sm">Chat (#blockscout)</li>
+                <li class="text-white mb-2 text-sm">Discussions</li>
+                <li class="text-white mb-2 text-sm">Staking stats</li>
+                <li class="text-white mb-2 text-sm">
+                  Gnosis Chain Usage stats
+                </li>
+                <li class="text-white mb-2 text-sm">
+                  <span>Add Gnosis Chain</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-2">
+            <h6 class="text-white">Main Networks</h6>
+            <div class="pl-3">
+              <ul>
+                <li class="text-white mb-2 text-sm">Ethereum</li>
+                <li class="text-white mb-2 text-sm">Ethereum Classic</li>
+                <li class="text-white mb-2 text-sm">
+                  Optimism on Gnosis Chain
+                </li>
+                <li class="text-white mb-2 text-sm">POA</li>
+                <li class="text-white mb-2 text-sm">RSK</li>
+                <li class="text-white mb-2 text-sm">ARTIS Σ</li>
+                <li class="text-white mb-2 text-sm">
+                  <span>LUKSO L14</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-2">
+            <h6 class="text-white">API's</h6>
+            <div class="pl-3">
+              <ul>
+                <li class="text-white mb-2 text-sm">GraphQL</li>
+                <li class="text-white mb-2 text-sm">RPC</li>
+                <li class="text-white mb-2 text-sm">ETH RPC</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-2">
+            <h6 class="text-white">Bridges</h6>
+            <div class="pl-3">
+              <ul>
+                <li class="text-white mb-2 text-sm">xDai Bridge</li>
+                <li class="text-white mb-2 text-sm">Omni Bridge</li>
+                <li class="text-white mb-2 text-sm">Binance Bridge</li>
+                <li class="text-white mb-2 text-sm">xDai Bridge Stats</li>
+                <li class="text-white mb-2 text-sm">Omni Stats</li>
+                <li class="text-white mb-2 text-sm">Omni Stable Stats</li>
+                <li class="text-white mb-2 text-sm">Omni AMB Live Monitor</li>
+                <li class="text-white mb-2 text-sm">
+                  Binance AMB Live Monitor
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"
+  ></script>
+</html>

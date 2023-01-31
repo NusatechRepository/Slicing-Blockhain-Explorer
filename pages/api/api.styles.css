@@ -1,0 +1,23 @@
+:root {
+  --navy: #001564;
+  --teal: #07b1aa;
+  --dark-blue: #0a5be0;
+  --secondary-blue: #5b8ceb;
+  --dark-navy: #121b51;
+  --dark-gray: #77838f;
+  --slate: #333333;
+  --white: #ffffff;
+  --light-gray: #eff6ff;
+  --light-slate: #afb4bc;
+  --red: #ff4445;
+  --orange: #ef8943;
+  --dark-teal: #24ae8f;
+  --green: #80d6a1;
+}
+
+.api-button {
+  padding: 8px;
+  border-radius: 6px;
+  color: var(--dark-blue);
+  background-color: rgba(10, 91, 224, 10%);
+}
