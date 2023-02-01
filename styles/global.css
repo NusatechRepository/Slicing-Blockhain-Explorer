@@ -30,6 +30,12 @@ body {
   font-weight: 400;
 }
 
+.layout {
+  max-width: 88.75rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -267,9 +273,9 @@ input.search-coin::placeholder {
   background-color: #f6f7fb;
 }
 
-.card-banner-wrapper {
+/* .card-banner-wrapper {
   margin: 0 30px;
-}
+} */
 
 /* .card-content-wrapper {
   gap: 10px;
@@ -299,9 +305,9 @@ input.search-coin::placeholder {
   width: 100%;
 }
 
-.card-table-wrapper {
+/* .card-table-wrapper {
   gap: 20px;
-}
+} */
 
 .card-table {
   background-color: var(--white);
@@ -345,3 +351,8 @@ input.search-coin::placeholder {
 }
 
 /* ====== Mediq query ======== */
+@media (max-width: 575.98px) {
+  .filter {
+    display: none;
+  }
+}

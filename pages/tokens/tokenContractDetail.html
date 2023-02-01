@@ -1,420 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../../styles/global.css" />
-    <link rel="stylesheet" href="./reogs.styles.css" />
-    <title>Token Contract Detail Page</title>
-  </head>
-  <body>
-    <!-- ================== Header ============ -->
-    <nav class="navbar navbar-expand-lg navbar-light mx-4 py-2">
-      <a class="navbar-brand" href="/">
-        <img src="../../assets/images/logo.png" alt="" />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto navbar-item-menu">
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle navbar-item"
-              href="#"
-              role="button"
-              data-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img src="../../assets/icon/icon_blockchain.svg" alt="" />
-              <span class="ml-2 navbar-link">Block</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../styles/global.css" />
+  <link rel="stylesheet" href="./reogs.styles.css" />
+  <title>Token Contract Detail Page</title>
+</head>
+
+<body>
+  <!-- ================== Header ============ -->
+  <nav class="navbar navbar-expand-lg navbar-light mx-4 py-2">
+    <a class="navbar-brand" href="/">
+      <img src="../../assets/images/logo.png" alt="" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto navbar-item-menu">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle navbar-item" href="#" role="button" data-toggle="dropdown"
+            aria-expanded="false">
+            <img src="../../assets/icon/icon_blockchain.svg" alt="" />
+            <span class="ml-2 navbar-link">Block</span>
+          </a>
+          <div class="dropdown-menu p-2">
+            <a class="dropdown-item text-dark-gray" href="../blocks/blocks.html">Blocks</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-dark-gray" href="../uncles/uncles.html">Uncless</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-dark-gray" href="../reogs/reogs.html">Forked Blocks (Reorgs)</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-dark-gray" href="#">Verifed Contract</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle navbar-item" href="#" role="button" data-toggle="dropdown"
+            aria-expanded="false">
+            <img src="../../assets/icon/icon_nav_transaction.svg" alt="" />
+            <span class="ml-2 navbar-link">Transaction</span>
+          </a>
+          <div class="dropdown-menu p-2">
+            <a class="dropdown-item text-dark-gray" href="../validated/validated.html">Validated</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-dark-gray" href="#">Pending</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a href="../account/account.html" class="nav-link navbar-item">
+            <img src="../../assets/icon/icon_user_outline.svg" alt="" />
+            <span class="navbar-link ml-2">Accounts</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="tokens.html" class="nav-link navbar-item active">
+            <img src="../../assets/icon/icon_coin_stack.svg" alt="" />
+            <span class="navbar-link ml-2">Tokens</span>
+          </a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle navbar-item" href="#" role="button" data-toggle="dropdown"
+            aria-expanded="false">
+            <img src="../../assets/icon/icon_api.svg" alt="" />
+            <span class="ml-2 navbar-link"> API's </span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-left p-2">
+            <a class="dropdown-item text-dark-gray" href="#">GraphQL</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-dark-gray" href="../api/RPC.html">RPC</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-dark-gray" href="../api/ethRPC.html">ETH RPC</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            <img class="" src="../../assets/icon/dot.svg" alt="" />
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg-right p-3">
+            <div>Mainnets</div>
+            <a class="dropdown-item text-center text-dark-gray" href="#">
+              Mainets
             </a>
-            <div class="dropdown-menu p-2">
-              <a
-                class="dropdown-item text-dark-gray"
-                href="../blocks/blocks.html"
-                >Blocks</a
-              >
-              <div class="dropdown-divider"></div>
-              <a
-                class="dropdown-item text-dark-gray"
-                href="../uncles/uncles.html"
-                >Uncless</a
-              >
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-dark-gray" href="../reogs/reogs.html"
-                >Forked Blocks (Reorgs)</a
-              >
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-dark-gray" href="#"
-                >Verifed Contract</a
-              >
+            <div class="dropdown-divider"></div>
+            <div>Testnet</div>
+            <a class="dropdown-item text-center text-dark-gray" href="#">
+              Testnet
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-center" href="#"> Other Networks </a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-secondary">
+            <img src="../../assets/icon/icon_moon.svg" alt="" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- ======================== End header -->
+
+  <main>
+    <!-- ================= Banner Section ============= -->
+    <section class="banner-hero">
+      <div class="layout py-5">
+        <div class="card border-0">
+          <div class="d-flex px-3 py-4">
+            <div class="w-full">
+              <h4 class="mb-3">Nusatech Explorer</h4>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend filter">
+                  <button class="btn button-primary text-white font-weight-normal dropdown-toggle" type="button"
+                    data-toggle="dropdown" aria-expanded="false">
+                    All Filters
+                  </button>
+                  <div class="dropdown-menu mt-2 p-2">
+                    <a class="dropdown-item rounded-lg" href="#">All Filters</a>
+                    <a class="dropdown-item rounded-lg" href="#">Address</a>
+                    <a class="dropdown-item rounded-lg" href="#">Tokens</a>
+                    <a class="dropdown-item rounded-lg" href="#">Name Tags</a>
+                    <a class="dropdown-item rounded-lg" href="#">Labels</a>
+                    <a class="dropdown-item rounded-lg" href="#">Websites</a>
+                  </div>
+                </div>
+                <input type="text" class="form-control search-coin"
+                  placeholder="Search by Address / Transaction Hash / Block / Token"
+                  aria-label="Text input with dropdown button" />
+                <div class="input-group-append">
+                  <button class="btn button-teal text-white" type="button" id="button-addon2">
+                    <img src="../../assets/icon/icon_search.svg" alt="" />
+                  </button>
+                </div>
+              </div>
             </div>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle navbar-item"
-              href="#"
-              role="button"
-              data-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img src="../../assets/icon/icon_nav_transaction.svg" alt="" />
-              <span class="ml-2 navbar-link">Transaction</span>
-            </a>
-            <div class="dropdown-menu p-2">
-              <a
-                class="dropdown-item text-dark-gray"
-                href="../validated/validated.html"
-                >Validated</a
-              >
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-dark-gray" href="#">Pending</a>
-            </div>
-          </li>
-
-          <li class="nav-item">
-            <a href="../account/account.html" class="nav-link navbar-item">
-              <img src="../../assets/icon/icon_user_outline.svg" alt="" />
-              <span class="navbar-link ml-2">Accounts</span>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="tokens.html" class="nav-link navbar-item active">
-              <img src="../../assets/icon/icon_coin_stack.svg" alt="" />
-              <span class="navbar-link ml-2">Tokens</span>
-            </a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle navbar-item"
-              href="#"
-              role="button"
-              data-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img src="../../assets/icon/icon_api.svg" alt="" />
-              <span class="ml-2 navbar-link"> API's </span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-left p-2">
-              <a class="dropdown-item text-dark-gray" href="#">GraphQL</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-dark-gray" href="../api/RPC.html"
-                >RPC</a
-              >
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-dark-gray" href="../api/ethRPC.html"
-                >ETH RPC</a
-              >
-            </div>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img class="" src="../../assets/icon/dot.svg" alt="" />
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg-right p-3">
-              <div>Mainnets</div>
-              <a class="dropdown-item text-center text-dark-gray" href="#">
-                Mainets
-              </a>
-              <div class="dropdown-divider"></div>
-              <div>Testnet</div>
-              <a class="dropdown-item text-center text-dark-gray" href="#">
-                Testnet
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center" href="#"> Other Networks </a>
-            </div>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link text-secondary">
-              <img src="../../assets/icon/icon_moon.svg" alt="" />
-            </a>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
-    </nav>
-    <!-- ======================== End header -->
+      <!-- <img src="./assets/images/Banner.png" alt="" srcset="" /> -->
+    </section>
+    <!-- ======== End Banner Section ================ -->
 
-    <main>
-      <!-- ================= Banner Section ============= -->
-      <section class="banner-hero">
-        <div class="mx-5 py-5">
-          <div class="card border-0 p-4">
-            <div class="d-flex px-5 py-1">
-              <div class="w-full">
-                <h4 class="mb-3">Nusatech Explorer</h4>
-                <div class="input-group input-group-lg mb-3">
-                  <div class="input-group-prepend">
-                    <button
-                      class="btn button-primary text-white font-weight-normal dropdown-toggle"
-                      type="button"
-                      data-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      All Filters
-                    </button>
-                    <div class="dropdown-menu mt-2 p-2">
-                      <a class="dropdown-item rounded-lg" href="#"
-                        >All Filters</a
-                      >
-                      <a class="dropdown-item rounded-lg" href="#">Address</a>
-                      <a class="dropdown-item rounded-lg" href="#">Tokens</a>
-                      <a class="dropdown-item rounded-lg" href="#">Name Tags</a>
-                      <a class="dropdown-item rounded-lg" href="#">Labels</a>
-                      <a class="dropdown-item rounded-lg" href="#">Websites</a>
+    <section class="main-content">
+      <div class="layout py-5">
+        <div class="mb-5">
+          <div class="card border-0 p-3 mb-3 rounded-lg p-4">
+            <h5 class="mb-4">Contract Address Details</h5>
+            <div class="d-flex gap-5">
+              <p class="text-teal m-0">
+                0x85E96771c0BE9aD0e008Db9bc55...
+              </p>
+              <div>
+                <img width="30" src="../../assets/icon/icon_outline_copy.svg" alt="" srcset="" />
+              </div>
+              <div>
+                <img width="20" src="../../assets/icon/icon_barcode.svg" alt="" srcset="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="card border-0 rounded-lg p-4 w-full">
+            <div class="mt-3">
+              <div class="pl-3">
+                <h5 class="font-weight-lighter">Overview</h5>
+              </div>
+
+              <div class="mt-3">
+                <div class="row">
+                  <div class="col-12 p-0 text-nowrap">
+                    <div class=" d-flex mb-2 text-nowrap">
+                      <div class=" col-3">
+                        <span class="text-dark-gray">Token Name Tag</span>
+                      </div>
+                      <div class="col-1">
+                        <span>:</span>
+                      </div>
+                      <div class="col">
+                        <span>Ardhana Digital Technology (ADT)</span>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="col-3">
+                        <span class="text-dark-gray">Total Transaction</span>
+                      </div>
+                      <div class="col-1">
+                        <span>:</span>
+                      </div>
+                      <div class="col">
+                        <span>75 Transaction</span>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="col-3">
+                        <span class="text-dark-gray">Used Gas</span>
+                      </div>
+                      <div class="col-1">
+                        <span>:</span>
+                      </div>
+                      <div class="col">
+                        <span>36,555 Gas Used</span>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="col-3">
+                        <span class="text-dark-gray">Last Balance Update</span>
+                      </div>
+                      <div class="col-1">
+                        <span>:</span>
+                      </div>
+                      <div class="col">
+                        <span>2,506,342</span>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="col-3">
+                        <span class="text-dark-gray">Tokens</span>
+                      </div>
+                      <div class="col-1">
+                        <span>:</span>
+                      </div>
+                      <div class="col">
+                        <span>0 Tokens</span>
+                      </div>
                     </div>
                   </div>
-                  <input
-                    type="text"
-                    class="form-control search-coin"
-                    placeholder="Search by Address / Transaction Hash / Block / Token"
-                    aria-label="Text input with dropdown button"
-                  />
-                  <div class="input-group-append">
-                    <button
-                      class="btn button-teal text-white"
-                      type="button"
-                      id="button-addon2"
-                    >
-                      <img src="../../assets/icon/icon_search.svg" alt="" />
-                    </button>
+                  <div class="col-6 p-0">
+                    <div class="d-flex">
+                      <div class="col-3">
+                        <span class="text-dark-gray">Created By</span>
+                      </div>
+                      <div class="col-1">
+                        <span>:</span>
+                      </div>
+                      <div class="col">
+                        <span>0x0176–8d3be8</span>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="col-3">
+                        <span class="text-dark-gray">Created To</span>
+                      </div>
+                      <div class="col-1">
+                        <span>:</span>
+                      </div>
+                      <div class="col">
+                        <span>0x7efb–2eb140</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- <img src="./assets/images/Banner.png" alt="" srcset="" /> -->
-      </section>
-      <!-- ======== End Banner Section ================ -->
 
-      <section class="main-content">
-        <div class="mx-5 py-5">
-          <div class="mb-5">
-            <div class="card border-0 p-3 mb-3 rounded-lg p-4">
-              <h5 class="mb-4">Contract Address Details</h5>
-              <div class="d-flex gap-5">
-                <p class="text-teal m-0">
-                  0x85E96771c0BE9aD0e008Db9bc55816f185b5e1d7
-                </p>
+        <div class="mt-5">
+          <ul class="nav  flex-column flex-sm-row nav-tabs border-0" role="tablist">
+            <li class="nav-item border-0">
+              <a class="tab nav-link active border-0 py-3" href="#transaction" role="tab"
+                data-toggle="tab">Transaction</a>
+            </li>
+            <li class="nav-item border-0">
+              <a class="tab nav-link border-0 py-3" href="#internalTransaction" role="tab" data-toggle="tab">Internal
+                Transaction</a>
+            </li>
+            <li class="nav-item border-0">
+              <a class="tab nav-link border-0 py-3" href="#balance" role="tab" data-toggle="tab">Coin Balance
+                History</a>
+            </li>
+            <li class="nav-item border-0">
+              <a class="tab nav-link border-0 py-3" href="#logs" role="tab" data-toggle="tab">Logs</a>
+            </li>
+            <li class="nav-item border-0">
+              <a class="tab nav-link border-0 py-3" href="#code" role="tab" data-toggle="tab">Code</a>
+            </li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <!-- Tab content token transaction -->
+            <div role="tabpanel" class="tab-pane active" id="transaction">
+              <div class="bg-white w-full rounded-lg border-0 shadow-sm pt-3">
                 <div>
-                  <img
-                    width="30"
-                    src="../../assets/icon/icon_outline_copy.svg"
-                    alt=""
-                    srcset=""
-                  />
-                </div>
-                <div>
-                  <img
-                    width="20"
-                    src="../../assets/icon/icon_barcode.svg"
-                    alt=""
-                    srcset=""
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="card border-0 rounded-lg p-4 w-full">
-              <div class="mt-3">
-                <div class="pl-3">
-                  <h5 class="font-weight-lighter">Overview</h5>
-                </div>
-
-                <div class="mt-3">
-                  <div class="d-flex">
-                    <div class="col-7 p-0">
-                      <div class="d-flex">
-                        <div class="col-3">
-                          <span class="text-dark-gray">Token Name Tag</span>
-                        </div>
-                        <div class="col-1">
-                          <span>:</span>
-                        </div>
-                        <div class="col">
-                          <span>Ardhana Digital Technology (ADT)</span>
-                        </div>
-                      </div>
-                      <div class="d-flex">
-                        <div class="col-3">
-                          <span class="text-dark-gray">Total Transaction</span>
-                        </div>
-                        <div class="col-1">
-                          <span>:</span>
-                        </div>
-                        <div class="col">
-                          <span>75 Transaction</span>
-                        </div>
-                      </div>
-                      <div class="d-flex">
-                        <div class="col-3">
-                          <span class="text-dark-gray">Used Gas</span>
-                        </div>
-                        <div class="col-1">
-                          <span>:</span>
-                        </div>
-                        <div class="col">
-                          <span>36,555 Gas Used</span>
-                        </div>
-                      </div>
-                      <div class="d-flex">
-                        <div class="col-3">
-                          <span class="text-dark-gray"
-                            >Last Balance Update</span
-                          >
-                        </div>
-                        <div class="col-1">
-                          <span>:</span>
-                        </div>
-                        <div class="col">
-                          <span>2,506,342</span>
-                        </div>
-                      </div>
-                      <div class="d-flex">
-                        <div class="col-3">
-                          <span class="text-dark-gray">Tokens</span>
-                        </div>
-                        <div class="col-1">
-                          <span>:</span>
-                        </div>
-                        <div class="col">
-                          <span>0 Tokens</span>
-                        </div>
-                      </div>
+                  <div class="d-flex justify-content-between align-items-center p-3">
+                    <div>
+                      <h6>Contract Address Transaction</h6>
                     </div>
-                    <div class="col-6 p-0">
-                      <div class="d-flex">
-                        <div class="col-3">
-                          <span class="text-dark-gray">Created By</span>
-                        </div>
-                        <div class="col-1">
-                          <span>:</span>
-                        </div>
-                        <div class="col">
-                          <span>0x0176–8d3be8</span>
-                        </div>
-                      </div>
-                      <div class="d-flex">
-                        <div class="col-3">
-                          <span class="text-dark-gray">Created To</span>
-                        </div>
-                        <div class="col-1">
-                          <span>:</span>
-                        </div>
-                        <div class="col">
-                          <span>0x7efb–2eb140</span>
-                        </div>
-                      </div>
+                    <div>
+                      <select class="custom-select bg-primary text-white">
+                        <option selected>All</option>
+                        <option value="1">7 days</option>
+                        <option value="2">14 Days</option>
+                        <option value="3">30 Days</option>
+                      </select>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-5">
-            <ul class="nav nav-tabs border-0" role="tablist">
-              <li class="nav-item border-0">
-                <a
-                  class="tab nav-link active border-0 px-5 py-3"
-                  href="#transaction"
-                  role="tab"
-                  data-toggle="tab"
-                  >Transaction</a
-                >
-              </li>
-              <li class="nav-item border-0">
-                <a
-                  class="tab nav-link border-0 px-5 py-3"
-                  href="#internalTransaction"
-                  role="tab"
-                  data-toggle="tab"
-                  >Internal Transaction</a
-                >
-              </li>
-              <li class="nav-item border-0">
-                <a
-                  class="tab nav-link border-0 px-5 py-3"
-                  href="#balance"
-                  role="tab"
-                  data-toggle="tab"
-                  >Coin Balance History</a
-                >
-              </li>
-              <li class="nav-item border-0">
-                <a
-                  class="tab nav-link border-0 px-5 py-3"
-                  href="#logs"
-                  role="tab"
-                  data-toggle="tab"
-                  >Logs</a
-                >
-              </li>
-              <li class="nav-item border-0">
-                <a
-                  class="tab nav-link border-0 px-5 py-3"
-                  href="#code"
-                  role="tab"
-                  data-toggle="tab"
-                  >Code</a
-                >
-              </li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-              <!-- Tab content token transaction -->
-              <div role="tabpanel" class="tab-pane active" id="transaction">
-                <div class="bg-white w-full rounded-lg border-0 shadow-sm pt-3">
-                  <div>
-                    <div
-                      class="d-flex justify-content-between align-items-center p-3"
-                    >
-                      <div>
-                        <h6>Contract Address Transaction</h6>
-                      </div>
-                      <div>
-                        <select class="custom-select bg-primary text-white">
-                          <option selected>All</option>
-                          <option value="1">7 days</option>
-                          <option value="2">14 Days</option>
-                          <option value="3">30 Days</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
+                <div class="table-responsive">
                   <table class="table bg-white border-0 p-5">
                     <thead class="text-dark-gray">
-                      <tr class="">
+                      <tr class="text-nowrap">
                         <th scope="col" class="font-light border-top-0 py-3">
                           Transaction
                         </th>
@@ -427,10 +324,7 @@
                         <th scope="col" class="font-light border-top-0 py-3">
                           Time
                         </th>
-                        <th
-                          scope="col"
-                          class="font-light border-top-0 py-3 text-center"
-                        >
+                        <th scope="col" class="font-light border-top-0 py-3 text-center">
                           From
                         </th>
                         <th scope="col" class="border-top-0"></th>
@@ -449,7 +343,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                      <tr class="text-nowrap">
                         <td class="text-slate">Contract Call</td>
                         <td class="text-dark-blue">#7627868</td>
                         <th class="text-teal font-light">
@@ -469,55 +363,36 @@
                         <td class="text-slate">0.26789</td>
                         <td class="text-teal">IN</td>
                       </tr>
-                      <tr>
-                        <td class="text-slate">Transaction</td>
-                        <td class="text-dark-blue">#7627868</td>
-                        <th class="text-teal font-light">
-                          <a href="#" class="text-teal">0x435d95cbcac2e1a...</a>
-                        </th>
-                        <td class="text-slate">5 Minutes Ago</td>
-                        <td class="text-teal">
-                          <a href="#" class="text-teal">
-                            0x661d0f14fbc850650...
-                          </a>
-                        </td>
-                        <td>
-                          <img src="../../assets//images/arrow.png" alt="" />
-                        </td>
-                        <td class="text-teal">0x661d0f14fbc850650...</td>
-                        <td class="text-slate">0.2225 ADT</td>
-                        <td class="text-slate">0.26789</td>
-                        <td class="text-orange">OUT</td>
-                      </tr>
+
                     </tbody>
                   </table>
                 </div>
               </div>
-              <!-- End tab content tab token transaction -->
+            </div>
+            <!-- End tab content tab token transaction -->
 
-              <!-- Tab Internal transaction -->
-              <div role="tabpanel" class="tab-pane" id="internalTransaction">
-                <div class="bg-white w-full rounded-lg border-0 shadow-sm pt-3">
-                  <div>
-                    <div
-                      class="d-flex justify-content-between align-items-center p-3"
-                    >
-                      <div>
-                        <h6>Internal Transaction Contract</h6>
-                      </div>
-                      <div>
-                        <select class="custom-select bg-primary text-white">
-                          <option selected>All</option>
-                          <option value="1">7 days</option>
-                          <option value="2">14 Days</option>
-                          <option value="3">30 Days</option>
-                        </select>
-                      </div>
+            <!-- Tab Internal transaction -->
+            <div role="tabpanel" class="tab-pane" id="internalTransaction">
+              <div class="bg-white w-full rounded-lg border-0 shadow-sm pt-3">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center p-3">
+                    <div>
+                      <h6>Internal Transaction Contract</h6>
+                    </div>
+                    <div>
+                      <select class="custom-select bg-primary text-white">
+                        <option selected>All</option>
+                        <option value="1">7 days</option>
+                        <option value="2">14 Days</option>
+                        <option value="3">30 Days</option>
+                      </select>
                     </div>
                   </div>
+                </div>
+                <div class="table-responsive">
                   <table class="table bg-white border-0 p-5">
                     <thead class="text-dark-gray">
-                      <tr class="">
+                      <tr class="text-nowrap">
                         <th scope="col" class="font-light border-top-0 py-3">
                           Transaction
                         </th>
@@ -530,10 +405,7 @@
                         <th scope="col" class="font-light border-top-0 py-3">
                           Time
                         </th>
-                        <th
-                          scope="col"
-                          class="font-light border-top-0 py-3 text-center"
-                        >
+                        <th scope="col" class="font-light border-top-0 py-3 text-center">
                           From
                         </th>
                         <th scope="col" class="border-top-0"></th>
@@ -552,7 +424,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                      <tr class="text-nowrap">
                         <td class="text-slate">Internal Transaction</td>
                         <td class="text-dark-blue">#7627868</td>
                         <th class="text-teal font-light">
@@ -576,19 +448,19 @@
                   </table>
                 </div>
               </div>
-              <!-- End tab transaction -->
+            </div>
+            <!-- End tab transaction -->
 
-              <!-- Tab content balance -->
-              <div role="tabpanel" class="tab-pane" id="balance">
-                <div class="bg-white w-full rounded-lg border-0 shadow-sm">
-                  <div class="d-flex p-4 gap-8">
-                    <!-- Chart Content -->
+            <!-- Tab content balance -->
+            <div role="tabpanel" class="tab-pane" id="balance">
+              <div class="bg-white w-full rounded-lg border-0 shadow-sm">
+                <div class="row p-4 gap-8">
+                  <!-- Chart Content -->
+                  <div class="col-12 col-lg-7">
                     <div class="py-2 w-full">
                       <div class="card rounded-lg border-0">
                         <div>
-                          <div
-                            class="d-flex justify-content-between align-items-center"
-                          >
+                          <div class="d-flex justify-content-between align-items-center">
                             <div>
                               <h6>Balance Chart</h6>
                             </div>
@@ -602,46 +474,34 @@
                             </div>
                           </div>
                           <div class="chart-wrapper mt-5">
-                            <canvas
-                              width="900"
-                              height="500"
-                              id="myChart"
-                            ></canvas>
+                            <canvas width="900" height="500" id="myChart"></canvas>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <!--  End Content Cart -->
+                  </div>
+                  <!--  End Content Cart -->
 
+                  <div class="col-12 col-lg-4">
                     <div class="w-full">
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
+                      <div class="d-flex justify-content-between align-items-center">
                         <div>
                           <h6>History</h6>
                         </div>
                         <div>
                           <div class="d-flex gap-4">
                             <button class="btn button-primary btn-sm">
-                              <img
-                                src="../../assets/icon/icon_fill_arrow_left.svg"
-                                alt=""
-                              />
+                              <img src="../../assets/icon/icon_fill_arrow_left.svg" alt="" />
                             </button>
                             <button class="btn button-primary btn-sm">
-                              <img
-                                src="../../assets/icon/icon_fill_arrow_right.svg"
-                                alt=""
-                              />
+                              <img src="../../assets/icon/icon_fill_arrow_right.svg" alt="" />
                             </button>
                           </div>
                         </div>
                       </div>
                       <div class="mt-5">
                         <div class="card p-3 mb-2">
-                          <div
-                            class="d-flex justify-content-between align-items-center"
-                          >
+                          <div class="d-flex justify-content-between align-items-center">
                             <div>
                               <p class="text-dark-blue m-0">Block 25299461</p>
                               <p class="text-dark-gray m-0">
@@ -649,14 +509,9 @@
                               </p>
                               <p class="m-0">6,496.982184 CTNFT</p>
                             </div>
-                            <div
-                              class="d-flex justify-content-between gap-10 align-items-center"
-                            >
+                            <div class="d-flex justify-content-between gap-10 align-items-center">
                               <div>
-                                <img
-                                  src="../../assets/icon/icon_fill_arrow_up_red.svg"
-                                  alt=""
-                                />
+                                <img src="../../assets/icon/icon_fill_arrow_up_red.svg" alt="" />
                               </div>
                               <div>
                                 <p class="text-red m-0">0.300021 CTNFT</p>
@@ -665,9 +520,7 @@
                           </div>
                         </div>
                         <div class="card p-3 mb-2">
-                          <div
-                            class="d-flex justify-content-between align-items-center"
-                          >
+                          <div class="d-flex justify-content-between align-items-center">
                             <div>
                               <p class="text-dark-blue m-0">Block 25299461</p>
                               <p class="text-dark-gray m-0">
@@ -675,14 +528,9 @@
                               </p>
                               <p class="m-0">6,496.982184 CTNFT</p>
                             </div>
-                            <div
-                              class="d-flex justify-content-between gap-10 align-items-center"
-                            >
+                            <div class="d-flex justify-content-between gap-10 align-items-center">
                               <div>
-                                <img
-                                  src="../../assets/icon/icon_fill_arrow_up_teal.svg"
-                                  alt=""
-                                />
+                                <img src="../../assets/icon/icon_fill_arrow_up_teal.svg" alt="" />
                               </div>
                               <div>
                                 <p class="text-teal m-0">0.300021 CTNFT</p>
@@ -691,9 +539,7 @@
                           </div>
                         </div>
                         <div class="card p-3 mb-2">
-                          <div
-                            class="d-flex justify-content-between align-items-center"
-                          >
+                          <div class="d-flex justify-content-between align-items-center">
                             <div>
                               <p class="text-dark-blue m-0">Block 25299461</p>
                               <p class="text-dark-gray m-0">
@@ -701,14 +547,9 @@
                               </p>
                               <p class="m-0">6,496.982184 CTNFT</p>
                             </div>
-                            <div
-                              class="d-flex justify-content-between gap-10 align-items-center"
-                            >
+                            <div class="d-flex justify-content-between gap-10 align-items-center">
                               <div>
-                                <img
-                                  src="../../assets/icon/icon_fill_arrow_up_teal.svg"
-                                  alt=""
-                                />
+                                <img src="../../assets/icon/icon_fill_arrow_up_teal.svg" alt="" />
                               </div>
                               <div>
                                 <p class="text-teal m-0">0.300021 CTNFT</p>
@@ -717,9 +558,7 @@
                           </div>
                         </div>
                         <div class="card p-3 mb-2">
-                          <div
-                            class="d-flex justify-content-between align-items-center"
-                          >
+                          <div class="d-flex justify-content-between align-items-center">
                             <div>
                               <p class="text-dark-blue m-0">Block 25299461</p>
                               <p class="text-dark-gray m-0">
@@ -727,14 +566,9 @@
                               </p>
                               <p class="m-0">6,496.982184 CTNFT</p>
                             </div>
-                            <div
-                              class="d-flex justify-content-between gap-10 align-items-center"
-                            >
+                            <div class="d-flex justify-content-between gap-10 align-items-center">
                               <div>
-                                <img
-                                  src="../../assets/icon/icon_fill_arrow_up_red.svg"
-                                  alt=""
-                                />
+                                <img src="../../assets/icon/icon_fill_arrow_up_red.svg" alt="" />
                               </div>
                               <div>
                                 <p class="text-red m-0">0.300021 CTNFT</p>
@@ -747,353 +581,318 @@
                   </div>
                 </div>
               </div>
-              <!-- End content tab balance -->
-
-              <!-- Tab content log -->
-              <div
-                role="tabpanel"
-                class="tab-pane fade border-0 bg-white rounded-lg border-0 shadow-sm px-3 py-4"
-                id="logs"
-              >
-                <div>
-                  <h5 class="font-weight-lighter">Logs Contract</h5>
-                </div>
-                <div>
-                  <div class="d-flex gap-3 mt-3">
-                    <input
-                      type="text"
-                      class="form-control form-control-lg search-coin w-full"
-                      placeholder="Search Topic"
-                      aria-label="Text input with dropdown button"
-                    />
-                    <button class="btn button-primary" type="button">
-                      Search
-                    </button>
-                  </div>
-                </div>
-                <div class="mt-3">
-                  <div class="card mb-3 border-0 bg-light-gray p-3 rounded-lg">
-                    <div class="p-3 bg-bright-teal rounded-lg">
-                      <a href="contractDetail.html" class="m-0 text-teal">
-                        To see accurate decoded input data, the contract must be
-                        verified. Verify the contract
-                        <span class="text-slate">here</span>
-                      </a>
-                    </div>
-                    <div class="mt-4">
-                      <div class="row">
-                        <div class="col-1">
-                          <h6 class="text-dark-gray">Address</h6>
-                        </div>
-                        <div class="col-10">
-                          <p>0x9d90582643ac9517ad79C07F36a1773082656A07</p>
-                        </div>
-                      </div>
-                      <div class="row d-flex align-items-center">
-                        <div class="col-1">
-                          <h6 class="text-dark-gray">Topics</h6>
-                        </div>
-                        <div class="col-10">
-                          <p>
-                            [0]
-                            0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
-                          </p>
-                          <p>
-                            [1]
-                            0x000000000000000000000000ccdf7fdc12063d66c2d9010f56c982afae07a756
-                          </p>
-                          <p>
-                            [2]
-                            0x000000000000000000000000ac8ea8dfd05bfe0d172cf3b476528bc325bca86a
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-1">
-                          <h6 class="text-dark-gray">Data</h6>
-                        </div>
-                        <div class="col-10">
-                          <p>
-                            0x0000000000000000000000000000000000000000000000000001c6bf52634000
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card mb-3 border-0 bg-light-gray p-3 rounded-lg">
-                    <div class="p-3 bg-bright-teal rounded-lg">
-                      <a href="contractDetail.html" class="m-0 text-teal">
-                        To see accurate decoded input data, the contract must be
-                        verified. Verify the contract
-                        <span class="text-slate">here</span>
-                      </a>
-                    </div>
-                    <div class="mt-4">
-                      <div class="row">
-                        <div class="col-1">
-                          <h6 class="text-dark-gray">Address</h6>
-                        </div>
-                        <div class="col-10">
-                          <p>0x9d90582643ac9517ad79C07F36a1773082656A07</p>
-                        </div>
-                      </div>
-                      <div class="row d-flex align-items-center">
-                        <div class="col-1">
-                          <h6 class="text-dark-gray">Topics</h6>
-                        </div>
-                        <div class="col-10">
-                          <p>
-                            [0]
-                            0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
-                          </p>
-                          <p>
-                            [1]
-                            0x000000000000000000000000ccdf7fdc12063d66c2d9010f56c982afae07a756
-                          </p>
-                          <p>
-                            [2]
-                            0x000000000000000000000000ac8ea8dfd05bfe0d172cf3b476528bc325bca86a
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-1">
-                          <h6 class="text-dark-gray">Data</h6>
-                        </div>
-                        <div class="col-10">
-                          <p>
-                            0x0000000000000000000000000000000000000000000000000001c6bf52634000
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card mb-3 border-0 bg-light-gray p-3 rounded-lg">
-                    <div class="p-3 bg-bright-teal rounded-lg">
-                      <p class="m-0 text-teal">
-                        To see accurate decoded input data, the contract must be
-                        verified. Verify the contract
-                        <a href="#" class="text-slate">here</a>
-                      </p>
-                    </div>
-                    <div class="mt-4">
-                      <div class="row">
-                        <div class="col-1">
-                          <h6 class="text-dark-gray">Address</h6>
-                        </div>
-                        <div class="col-10">
-                          <p>0x9d90582643ac9517ad79C07F36a1773082656A07</p>
-                        </div>
-                      </div>
-                      <div class="row d-flex align-items-center">
-                        <div class="col-1">
-                          <h6 class="text-dark-gray">Topics</h6>
-                        </div>
-                        <div class="col-10">
-                          <p>
-                            [0]
-                            0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
-                          </p>
-                          <p>
-                            [1]
-                            0x000000000000000000000000ccdf7fdc12063d66c2d9010f56c982afae07a756
-                          </p>
-                          <p>
-                            [2]
-                            0x000000000000000000000000ac8ea8dfd05bfe0d172cf3b476528bc325bca86a
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-1">
-                          <h6 class="text-dark-gray">Data</h6>
-                        </div>
-                        <div class="col-10">
-                          <p>
-                            0x0000000000000000000000000000000000000000000000000001c6bf52634000
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Tab content log -->
-
-              <!-- Tab content Code -->
-              <div
-                role="tabpanel"
-                class="tab-pane border-0 bg-white rounded-lg border-0 shadow-sm px-5 py-4"
-                id="code"
-              >
-                <div
-                  class="d-flex justify-content-between align-content-center"
-                >
-                  <div>
-                    <h5 class="m-0">Contract Byte Code</h5>
-                  </div>
-                  <div class="d-flex gap-3">
-                    <button type="button" class="btn button-outline-primary">
-                      Copy Byte Code
-                    </button>
-                    <button type="button" class="btn button-primary">
-                      Verify & Publish
-                    </button>
-                  </div>
-                </div>
-                <div class="mt-4">
-                  <div class="rounded-lg p-4 bg-light-gray">
-                    <code class="text-slate">
-                      x6060604052600436106100f1576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063035f057d146100f657806306fdde03146101a8578063095ea7b31461023657806318160ddd1461029057806323b872dd146102b9578063313ce5671461033257806350e8587e146103615780635a3b7e421461041357806366188463146104a157806370a08231146104fb57806372a7b8ba146105485780638da5cb5b146105fa57806395d89b411461064f578063a9059cbb146106dd578063cae9ca5114610737578063d73dd623146107d4578063dd62ed3e1461082e575b600080fd5b341561010157600080fd5b61018e6004808035906020019082018035906020019080806020026020016040519081016040528093929190818152602001838360200280828437820191505050505050919080359060200190820180359060200190808060200260200160405190810160405280939291908181526020018383602002808284378201915050505050509190505061089a565b604051808215151515815260200191505060405180910390f35b34156101b357600080fd5b6101bb610b37565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101fb5780820151818401526020810190506101e0565b50505050905090810190601f1680156102285780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b341561024157600080fd5b610276600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610bd5565b604051808215151515815260200191505060405180910390f35b341561029b57600080fd5b6102a3610cc7565b6040518082815260200191505060405180910390f35b34156102c457600080fd5b610318600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610ccd565b604051808215151515815260200191505060405180910390f35b341561033d57600080fd5b610345611087565b604051808260ff1660ff16815260200191505060405180910390f35b341561036c57600080fd5b6103f96004808035906020019082018035906020019080806020026020016040519081016040528093929190818152602001838360200280828437820191505050505050919080359060200190820180359060200190808060200260200160405190810160405280939291908181526020018383602002808284378201915050505050509190505061109a565b604051808215151515815260200191505060405180910390f35b341561041e57600080fd5b610426611216565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561046657808201518184015260208101905061044b565b50505050905090810190601f1680156104935780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34156104ac57600080fd5b6104e1600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919080359060200190919050506112b4565b604051808215151515815260200191505060405180910390f35b341561050657600080fd5b610532600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050611545565b6040518082815260200191505060405180910390f35b341561055357600080fd5b6105e060048080359060200190820180359060200190808060
-                    </code>
-                  </div>
-                </div>
-              </div>
-              <!-- End content tab code -->
             </div>
-          </div>
-        </div>
+            <!-- End content tab balance -->
 
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="modalQRCode"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header border-0">
-                <h3 class="modal-title" id="exampleModalLabel">QR Code</h3>
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
+            <!-- Tab content log -->
+            <div role="tabpanel" class="tab-pane fade border-0 bg-white rounded-lg border-0 shadow-sm px-3 py-4"
+              id="logs">
+              <div>
+                <h5 class="font-weight-lighter">Logs Contract</h5>
               </div>
-              <div class="modal-body">
-                <div class="text-center">
-                  <img src="../../assets/images/qrcode.png" alt="" />
-                </div>
-                <h5 class="text-center">Ardhana Digital Technology (ADT)</h5>
-              </div>
-              <div class="modal-footer border-0">
-                <div class="d-flex justify-content-center w-full">
-                  <button
-                    type="button"
-                    class="btn bg-primary text-white btn-block"
-                    data-dismiss="modal"
-                  >
-                    Close
+              <div>
+                <div class="d-flex gap-3 mt-3">
+                  <input type="text" class="form-control form-control-lg search-coin w-full" placeholder="Search Topic"
+                    aria-label="Text input with dropdown button" />
+                  <button class="btn button-primary" type="button">
+                    Search
                   </button>
                 </div>
               </div>
+              <div class="mt-3">
+                <div class="card mb-3 border-0 bg-light-gray p-3 rounded-lg">
+                  <div class="p-3 bg-bright-teal rounded-lg">
+                    <a href="contractDetail.html" class="m-0 text-teal">
+                      To see accurate decoded input data, the contract must be
+                      verified. Verify the contract
+                      <span class="text-slate">here</span>
+                    </a>
+                  </div>
+                  <div class="mt-4">
+                    <div class="row">
+                      <div class="col-1">
+                        <h6 class="text-dark-gray">Address</h6>
+                      </div>
+                      <div class="col-10">
+                        <p>0x9d90582643ac9517ad79C07F36a1773082656A07</p>
+                      </div>
+                    </div>
+                    <div class="row d-flex align-items-center">
+                      <div class="col-1">
+                        <h6 class="text-dark-gray">Topics</h6>
+                      </div>
+                      <div class="col-10">
+                        <p>
+                          [0]
+                          0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+                        </p>
+                        <p>
+                          [1]
+                          0x000000000000000000000000ccdf7fdc12063d66c2d9010f56c982afae07a756
+                        </p>
+                        <p>
+                          [2]
+                          0x000000000000000000000000ac8ea8dfd05bfe0d172cf3b476528bc325bca86a
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-1">
+                        <h6 class="text-dark-gray">Data</h6>
+                      </div>
+                      <div class="col-10">
+                        <p>
+                          0x0000000000000000000000000000000000000000000000000001c6bf52634000
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 border-0 bg-light-gray p-3 rounded-lg">
+                  <div class="p-3 bg-bright-teal rounded-lg">
+                    <a href="contractDetail.html" class="m-0 text-teal">
+                      To see accurate decoded input data, the contract must be
+                      verified. Verify the contract
+                      <span class="text-slate">here</span>
+                    </a>
+                  </div>
+                  <div class="mt-4">
+                    <div class="row">
+                      <div class="col-1">
+                        <h6 class="text-dark-gray">Address</h6>
+                      </div>
+                      <div class="col-10">
+                        <p>0x9d90582643ac9517ad79C07F36a1773082656A07</p>
+                      </div>
+                    </div>
+                    <div class="row d-flex align-items-center">
+                      <div class="col-1">
+                        <h6 class="text-dark-gray">Topics</h6>
+                      </div>
+                      <div class="col-10">
+                        <p>
+                          [0]
+                          0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+                        </p>
+                        <p>
+                          [1]
+                          0x000000000000000000000000ccdf7fdc12063d66c2d9010f56c982afae07a756
+                        </p>
+                        <p>
+                          [2]
+                          0x000000000000000000000000ac8ea8dfd05bfe0d172cf3b476528bc325bca86a
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-1">
+                        <h6 class="text-dark-gray">Data</h6>
+                      </div>
+                      <div class="col-10">
+                        <p>
+                          0x0000000000000000000000000000000000000000000000000001c6bf52634000
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3 border-0 bg-light-gray p-3 rounded-lg">
+                  <div class="p-3 bg-bright-teal rounded-lg">
+                    <p class="m-0 text-teal">
+                      To see accurate decoded input data, the contract must be
+                      verified. Verify the contract
+                      <a href="#" class="text-slate">here</a>
+                    </p>
+                  </div>
+                  <div class="mt-4">
+                    <div class="row">
+                      <div class="col-1">
+                        <h6 class="text-dark-gray">Address</h6>
+                      </div>
+                      <div class="col-10">
+                        <p>0x9d90582643ac9517ad79C07F36a1773082656A07</p>
+                      </div>
+                    </div>
+                    <div class="row d-flex align-items-center">
+                      <div class="col-1">
+                        <h6 class="text-dark-gray">Topics</h6>
+                      </div>
+                      <div class="col-10">
+                        <p>
+                          [0]
+                          0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+                        </p>
+                        <p>
+                          [1]
+                          0x000000000000000000000000ccdf7fdc12063d66c2d9010f56c982afae07a756
+                        </p>
+                        <p>
+                          [2]
+                          0x000000000000000000000000ac8ea8dfd05bfe0d172cf3b476528bc325bca86a
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-1">
+                        <h6 class="text-dark-gray">Data</h6>
+                      </div>
+                      <div class="col-10">
+                        <p>
+                          0x0000000000000000000000000000000000000000000000000001c6bf52634000
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <!-- End Tab content log -->
+
+            <!-- Tab content Code -->
+            <div role="tabpanel" class="tab-pane border-0 bg-white rounded-lg border-0 shadow-sm px-5 py-4" id="code">
+              <div class="d-flex justify-content-between align-content-center">
+                <div>
+                  <h5 class="m-0">Contract Byte Code</h5>
+                </div>
+                <div class="d-flex gap-3">
+                  <button type="button" class="btn button-outline-primary">
+                    Copy Byte Code
+                  </button>
+                  <button type="button" class="btn button-primary">
+                    Verify & Publish
+                  </button>
+                </div>
+              </div>
+              <div class="mt-4">
+                <div class="rounded-lg p-4 bg-light-gray">
+                  <code class="text-slate">
+                      x6060604052600436106100f1576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063035f057d146100f657806306fdde03146101a8578063095ea7b31461023657806318160ddd1461029057806323b872dd146102b9578063313ce5671461033257806350e8587e146103615780635a3b7e421461041357806366188463146104a157806370a08231146104fb57806372a7b8ba146105485780638da5cb5b146105fa57806395d89b411461064f578063a9059cbb146106dd578063cae9ca5114610737578063d73dd623146107d4578063dd62ed3e1461082e575b600080fd5b341561010157600080fd5b61018e6004808035906020019082018035906020019080806020026020016040519081016040528093929190818152602001838360200280828437820191505050505050919080359060200190820180359060200190808060200260200160405190810160405280939291908181526020018383602002808284378201915050505050509190505061089a565b604051808215151515815260200191505060405180910390f35b34156101b357600080fd5b6101bb610b37565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101fb5780820151818401526020810190506101e0565b50505050905090810190601f1680156102285780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b341561024157600080fd5b610276600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610bd5565b604051808215151515815260200191505060405180910390f35b341561029b57600080fd5b6102a3610cc7565b6040518082815260200191505060405180910390f35b34156102c457600080fd5b610318600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091908035906020019091905050610ccd565b604051808215151515815260200191505060405180910390f35b341561033d57600080fd5b610345611087565b604051808260ff1660ff16815260200191505060405180910390f35b341561036c57600080fd5b6103f96004808035906020019082018035906020019080806020026020016040519081016040528093929190818152602001838360200280828437820191505050505050919080359060200190820180359060200190808060200260200160405190810160405280939291908181526020018383602002808284378201915050505050509190505061109a565b604051808215151515815260200191505060405180910390f35b341561041e57600080fd5b610426611216565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561046657808201518184015260208101905061044b565b50505050905090810190601f1680156104935780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34156104ac57600080fd5b6104e1600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919080359060200190919050506112b4565b604051808215151515815260200191505060405180910390f35b341561050657600080fd5b610532600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050611545565b6040518082815260200191505060405180910390f35b341561055357600080fd5b6105e060048080359060200190820180359060200190808060
+                    </code>
+                </div>
+              </div>
+            </div>
+            <!-- End content tab code -->
           </div>
         </div>
-      </section>
-    </main>
+      </div>
 
-    <footer class="footer mt-auto">
-      <div class="px-4 py-5">
-        <div class="d-flex">
-          <div class="col-3">
-            <h5 class="banner-hero-brand mb-3">
-              <span class="text-white">Nusa</span>
-              <span class="text-teal">Explorer</span>
-            </h5>
-            <p class="text-white">
-              Nusa<span class="text-teal">explorer</span> is a tool for
-              inspecting and analyzing EVM based blockchains. Blockchain
-              explorer for Ethereum Networks.
-            </p>
-          </div>
-          <div class="col-2">
-            <h6 class="text-white">Nusaexplorer</h6>
-            <div class="pl-3">
-              <ul>
-                <li class="text-white mb-2 text-sm">Submit an Issue</li>
-                <li class="text-white mb-2 text-sm">Contribute</li>
-                <li class="text-white mb-2 text-sm">Chat (#blockscout)</li>
-                <li class="text-white mb-2 text-sm">Discussions</li>
-                <li class="text-white mb-2 text-sm">Staking stats</li>
-                <li class="text-white mb-2 text-sm">
-                  Gnosis Chain Usage stats
-                </li>
-                <li class="text-white mb-2 text-sm">
-                  <span>Add Gnosis Chain</span>
-                </li>
-              </ul>
+      <!-- Modal -->
+      <div class="modal fade" id="modalQRCode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h3 class="modal-title" id="exampleModalLabel">QR Code</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-          </div>
-          <div class="col-2">
-            <h6 class="text-white">Main Networks</h6>
-            <div class="pl-3">
-              <ul>
-                <li class="text-white mb-2 text-sm">Ethereum</li>
-                <li class="text-white mb-2 text-sm">Ethereum Classic</li>
-                <li class="text-white mb-2 text-sm">
-                  Optimism on Gnosis Chain
-                </li>
-                <li class="text-white mb-2 text-sm">POA</li>
-                <li class="text-white mb-2 text-sm">RSK</li>
-                <li class="text-white mb-2 text-sm">ARTIS Σ</li>
-                <li class="text-white mb-2 text-sm">
-                  <span>LUKSO L14</span>
-                </li>
-              </ul>
+            <div class="modal-body">
+              <div class="text-center">
+                <img src="../../assets/images/qrcode.png" alt="" />
+              </div>
+              <h5 class="text-center">Ardhana Digital Technology (ADT)</h5>
             </div>
-          </div>
-          <div class="col-2">
-            <h6 class="text-white">API's</h6>
-            <div class="pl-3">
-              <ul>
-                <li class="text-white mb-2 text-sm">GraphQL</li>
-                <li class="text-white mb-2 text-sm">RPC</li>
-                <li class="text-white mb-2 text-sm">ETH RPC</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-2">
-            <h6 class="text-white">Bridges</h6>
-            <div class="pl-3">
-              <ul>
-                <li class="text-white mb-2 text-sm">xDai Bridge</li>
-                <li class="text-white mb-2 text-sm">Omni Bridge</li>
-                <li class="text-white mb-2 text-sm">Binance Bridge</li>
-                <li class="text-white mb-2 text-sm">xDai Bridge Stats</li>
-                <li class="text-white mb-2 text-sm">Omni Stats</li>
-                <li class="text-white mb-2 text-sm">Omni Stable Stats</li>
-                <li class="text-white mb-2 text-sm">Omni AMB Live Monitor</li>
-                <li class="text-white mb-2 text-sm">
-                  Binance AMB Live Monitor
-                </li>
-              </ul>
+            <div class="modal-footer border-0">
+              <div class="d-flex justify-content-center w-full">
+                <button type="button" class="btn bg-primary text-white btn-block" data-dismiss="modal">
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-  </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-    crossorigin="anonymous"
-  ></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="../../scripts/chart.js"></script>
+    </section>
+  </main>
+
+  <footer class="footer mt-auto">
+    <div class="px-4 py-5">
+      <div class="d-flex">
+        <div class="col-3">
+          <h5 class="banner-hero-brand mb-3">
+            <span class="text-white">Nusa</span>
+            <span class="text-teal">Explorer</span>
+          </h5>
+          <p class="text-white">
+            Nusa<span class="text-teal">explorer</span> is a tool for
+            inspecting and analyzing EVM based blockchains. Blockchain
+            explorer for Ethereum Networks.
+          </p>
+        </div>
+        <div class="col-2">
+          <h6 class="text-white">Nusaexplorer</h6>
+          <div class="pl-3">
+            <ul>
+              <li class="text-white mb-2 text-sm">Submit an Issue</li>
+              <li class="text-white mb-2 text-sm">Contribute</li>
+              <li class="text-white mb-2 text-sm">Chat (#blockscout)</li>
+              <li class="text-white mb-2 text-sm">Discussions</li>
+              <li class="text-white mb-2 text-sm">Staking stats</li>
+              <li class="text-white mb-2 text-sm">
+                Gnosis Chain Usage stats
+              </li>
+              <li class="text-white mb-2 text-sm">
+                <span>Add Gnosis Chain</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-2">
+          <h6 class="text-white">Main Networks</h6>
+          <div class="pl-3">
+            <ul>
+              <li class="text-white mb-2 text-sm">Ethereum</li>
+              <li class="text-white mb-2 text-sm">Ethereum Classic</li>
+              <li class="text-white mb-2 text-sm">
+                Optimism on Gnosis Chain
+              </li>
+              <li class="text-white mb-2 text-sm">POA</li>
+              <li class="text-white mb-2 text-sm">RSK</li>
+              <li class="text-white mb-2 text-sm">ARTIS Σ</li>
+              <li class="text-white mb-2 text-sm">
+                <span>LUKSO L14</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-2">
+          <h6 class="text-white">API's</h6>
+          <div class="pl-3">
+            <ul>
+              <li class="text-white mb-2 text-sm">GraphQL</li>
+              <li class="text-white mb-2 text-sm">RPC</li>
+              <li class="text-white mb-2 text-sm">ETH RPC</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-2">
+          <h6 class="text-white">Bridges</h6>
+          <div class="pl-3">
+            <ul>
+              <li class="text-white mb-2 text-sm">xDai Bridge</li>
+              <li class="text-white mb-2 text-sm">Omni Bridge</li>
+              <li class="text-white mb-2 text-sm">Binance Bridge</li>
+              <li class="text-white mb-2 text-sm">xDai Bridge Stats</li>
+              <li class="text-white mb-2 text-sm">Omni Stats</li>
+              <li class="text-white mb-2 text-sm">Omni Stable Stats</li>
+              <li class="text-white mb-2 text-sm">Omni AMB Live Monitor</li>
+              <li class="text-white mb-2 text-sm">
+                Binance AMB Live Monitor
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+  integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../../scripts/chart.js"></script>
+
 </html>
