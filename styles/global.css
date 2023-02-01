@@ -193,16 +193,6 @@ body {
 
 /* ======= Navbar ========= */
 
-.navbar-item-menu {
-  gap: 20px;
-}
-
-.navbar-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .navbar-link:hover {
   color: var(--slate);
 }
@@ -255,7 +245,7 @@ body {
 /* ======= Banner Hero */
 
 .banner-hero {
-  background-image: url("../../assets/images/Banner.png");
+  background-image: url("../assets/images/Banner.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -277,9 +267,13 @@ input.search-coin::placeholder {
   background-color: #f6f7fb;
 }
 
-.card-content-wrapper {
-  gap: 20px;
+.card-banner-wrapper {
+  margin: 0 30px;
 }
+
+/* .card-content-wrapper {
+  gap: 10px;
+} */
 
 .card-content {
   background-color: var(--white);
@@ -343,9 +337,11 @@ input.search-coin::placeholder {
 
 /* =========== Style Footer ============= */
 .footer {
-  background-image: url("../../assets/images/Banner.png");
+  background-image: url("../assets/images/Banner.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
   width: 100%;
 }
+
+/* ====== Mediq query ======== */

@@ -11,8 +11,8 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../../styles/global.css" />
-    <link rel="stylesheet" href="./reogs.styles.css" />
-    <title>Detail Block Page</title>
+    <link rel="stylesheet" href="api.styles.css" />
+    <title>Blocks Page</title>
   </head>
   <body>
     <!-- ================== Header ============ -->
@@ -36,17 +36,19 @@
         <ul class="navbar-nav ml-auto navbar-item-menu">
           <li class="nav-item dropdown">
             <a
-              class="nav-link dropdown-toggle navbar-item active"
+              class="nav-link dropdown-toggle navbar-item"
               href="#"
               role="button"
               data-toggle="dropdown"
               aria-expanded="false"
             >
               <img src="../../assets/icon/icon_blockchain.svg" alt="" />
-              <span class="ml-2 navbar-link">Block</span>
+              <span class="ml-2"> Block </span>
             </a>
             <div class="dropdown-menu p-2">
-              <a class="dropdown-item text-dark-gray" href="blocks.html"
+              <a
+                class="dropdown-item text-dark-gray"
+                href="../blocks/blocks.html"
                 >Blocks</a
               >
               <div class="dropdown-divider"></div>
@@ -110,7 +112,7 @@
 
           <li class="nav-item dropdown">
             <a
-              class="nav-link dropdown-toggle navbar-item"
+              class="nav-link dropdown-toggle navbar-item active"
               href="#"
               role="button"
               data-toggle="dropdown"
@@ -122,11 +124,9 @@
             <div class="dropdown-menu dropdown-menu-left p-2">
               <a class="dropdown-item text-dark-gray" href="#">GraphQL</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-dark-gray" href="../api/RPC.html"
-                >RPC</a
-              >
+              <a class="dropdown-item text-dark-gray" href="RPC.html">RPC</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-dark-gray" href="../api/ethRPC.html"
+              <a class="dropdown-item text-dark-gray" href="ethRPC.html"
                 >ETH RPC</a
               >
             </div>
@@ -168,227 +168,142 @@
     <!-- ======================== End header -->
 
     <main>
-      <!-- ================= Banner Section ============= -->
-      <section class="banner-hero">
-        <div class="mx-5 py-5">
-          <div class="card border-0 p-4">
-            <div class="d-flex px-5 py-1">
-              <div class="w-full">
-                <h4 class="mb-3">Nusatech Explorer</h4>
-                <div class="input-group input-group-lg mb-3">
-                  <div class="input-group-prepend">
-                    <button
-                      class="btn button-primary text-white font-weight-normal dropdown-toggle"
-                      type="button"
-                      data-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      All Filters
-                    </button>
-                    <div class="dropdown-menu mt-2 p-2">
-                      <a class="dropdown-item rounded-lg" href="#"
-                        >All Filters</a
-                      >
-                      <a class="dropdown-item rounded-lg" href="#">Address</a>
-                      <a class="dropdown-item rounded-lg" href="#">Tokens</a>
-                      <a class="dropdown-item rounded-lg" href="#">Name Tags</a>
-                      <a class="dropdown-item rounded-lg" href="#">Labels</a>
-                      <a class="dropdown-item rounded-lg" href="#">Websites</a>
-                    </div>
-                  </div>
-                  <input
-                    type="text"
-                    class="form-control search-coin"
-                    placeholder="Search by Address / Transaction Hash / Block / Token"
-                    aria-label="Text input with dropdown button"
-                  />
-                  <div class="input-group-append">
-                    <button
-                      class="btn button-teal text-white"
-                      type="button"
-                      id="button-addon2"
-                    >
-                      <img src="../../assets/icon/icon_search.svg" alt="" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- <img src="./assets/images/Banner.png" alt="" srcset="" /> -->
-      </section>
-      <!-- ======== End Banner Section ================ -->
-
       <section class="main-content">
         <div class="mx-5 py-5">
-          <div class="mt-5 mx-5">
-            <ul class="nav nav-tabs border-0" role="tablist">
-              <li class="nav-item border-0">
-                <a
-                  class="tab nav-link active border-0 px-5 py-3"
-                  href="#overview"
-                  role="tab"
-                  data-toggle="tab"
-                  >Overview</a
-                >
-              </li>
-              <li class="nav-item border-0">
-                <a
-                  class="tab nav-link border-0 px-5 py-3"
-                  href="#buzz"
-                  role="tab"
-                  data-toggle="tab"
-                  >Transaction</a
-                >
-              </li>
-            </ul>
+          <div class="mx-5">
+            <div class="card border-0 shadow rounded-lg mb-5">
+              <div class="p-4">
+                <h4 class="font-weight-lighter mb-4">
+                  ETH RPC API Documentation
+                </h4>
+                <p class="text-dark-navy">
+                  [ Base URL: https://localhost:4000/api ]
+                </p>
+                <p class="text-dark-gray">
+                  This API is provided to support some rpc methods in the exact
+                  format specified for ethereum nodes, which can be found here.
+                  This is useful to allow sending requests to blockscout without
+                  having to change anything about the request. However, in
+                  general, the custom RPC is recommended. Anything not in this
+                  list is not supported. Click on the method to be taken to the
+                  documentation for that method, and check the notes section for
+                  any potential differences.
+                </p>
+              </div>
+            </div>
+            <div class="card border-0 shadow rounded-lg">
+              <div class="border-bottom">
+                <div class="row">
+                  <div class="col-10">
+                    <div class="p-4 align-items-center w-f">
+                      <h5 class="mb-4">eht_blockNumber</h5>
+                      <span class="api-button api-button-blue mb-5"
+                        >curl -X POST --data '{"id":0,"jsonrpc":"2.0","method":
+                        "eth_blockNumber","params": []}'</span
+                      >
 
-            <!-- Tab panes -->
-            <div class="tab-content">
-              <div role="tabpanel" class="tab-pane active" id="overview">
-                <div class="d-flex gap-4">
-                  <div
-                    class="bg-white col-8 w-full rounded-lg border-0 shadow-sm p-5"
-                  >
-                    <div class="pb-4 border-bottom">
-                      <h4>Block Details</h4>
-                      <div class="mt-4 d-flex gap-4">
-                        <div
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="The block number in which transaction were recorderd."
-                        >
-                          <h6 class="mt-2">Block Height : 2497949</h6>
-                        </div>
-                        <div class="d-flex gap-4">
-                          <button class="btn button-primary btn-sm">
-                            <img
-                              src="../../assets/icon/icon_fill_arrow_left.svg"
-                              alt=""
-                            />
-                          </button>
-                          <button class="btn button-primary btn-sm">
-                            <img
-                              src="../../assets/icon/icon_fill_arrow_right.svg"
-                              alt=""
-                            />
-                          </button>
-                        </div>
-                      </div>
-                      <div class="d-flex gap-4 text-dark-gray mt-3">
-                        <span>0 Transaction</span>
-                        <span>694 bytes</span>
-                        <span
-                          >10 minutes ago (December-05-2022 04:36:28 PM +7
-                          UTC)</span
-                        >
-                      </div>
-                    </div>
-                    <div class="mt-4">
-                      <div class="d-flex mb-3">
-                        <div class="col-2">
-                          <h6 class="text-dark-gray">Hash</h6>
-                        </div>
-                        <div
-                          class="col-3"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="The SHA256 hash of the block."
-                        >
-                          <p class="text-dark-gray font-weight-lighter">
-                            0xc18329c6e905ac4332f45f7f46710151d1b356457dc0fdf817c9df3599bfe0e3
-                          </p>
-                        </div>
-                      </div>
-                      <div class="d-flex mb-3">
-                        <div class="col-2">
-                          <h6 class="text-dark-gray">Parent Hash</h6>
-                        </div>
-                        <div class="col-3">
-                          <p
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="The SHA256 hash of the parents block."
-                            class="text-teal font-weight-lighter"
-                          >
-                            0xc18329c6e905ac4332f45f7f46710151d1b356457dc0fdf817c9df3599bfe0e3
-                          </p>
-                        </div>
-                      </div>
-                      <div class="d-flex mb-3">
-                        <div class="col-2">
-                          <h6 class="text-dark-gray">Difficulty</h6>
-                        </div>
-                        <div class="col-3">
-                          <p class="text-dark-gray font-weight-lighter">14</p>
-                        </div>
-                      </div>
-                      <div class="d-flex mb-3">
-                        <div class="col-2">
-                          <h6 class="text-dark-gray text-nowrap">
-                            Total Difficulty
-                          </h6>
-                        </div>
-                        <div class="col-3">
-                          <p class="text-dark-gray font-weight-lighter">
-                            3,633,827
-                          </p>
-                        </div>
-                      </div>
-                      <div class="d-flex mb-3">
-                        <div class="col-2">
-                          <h6 class="text-dark-gray">Nonce</h6>
-                        </div>
-                        <div class="col-3">
-                          <p class="text-dark-gray font-weight-lighter">
-                            0x0000000000000000
-                          </p>
-                        </div>
+                      <div
+                        class="card mt-4 border-0 rounded-lg bg-light-gray p-3"
+                      >
+                        <pre id="ethBlock" class="text-dark-gray"></pre>
                       </div>
                     </div>
                   </div>
-                  <div class="bg-white col-4 rounded-lg border-0 shadow-sm p-5">
-                    <div class="mb-5">
-                      <h4 class="">Transaction Recap</h4>
-                      <p class="text-teal">425 Transactionon this Block</p>
-                    </div>
-                    <div class="mb-5">
-                      <h4 class="">Miner</h4>
-                      <p
-                        class="text-teal"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="0x36032d63C341bA924faF79200bf4b45"
-                      >
-                        0x36032d63C341bA924faF79200bf4b45
-                      </p>
-                    </div>
-                    <div>
-                      <h4 class="">Gas Used</h4>
-                      <p class="text-teal">425 Transactionon this Block</p>
-                      <div class="mt-3">
-                        <div class="progress" style="height: 10px">
-                          <div
-                            class="progress-bar bg-teal"
-                            role="progressbar"
-                            style="width: 25%"
-                            aria-valuenow="25"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <div class="p-4 d-flex flex-column">
+                      <div class="mb-auto">
+                        <button class="api-button btn api-button-blue px-4">
+                          Post
+                        </button>
+                      </div>
+                      <div>
+                        <p class="font-weight-lighter text-dark-gray">
+                          More detail
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div
-                role="tabpanel"
-                class="tab-pane fade border-0 bg-white rounded-lg border-0 shadow-sm p-5"
-                id="buzz"
-              >
-                <p>There are no transaction here</p>
+              <div class="border-bottom">
+                <div class="row">
+                  <div class="col-10">
+                    <div class="p-4 align-items-center w-f">
+                      <h5 class="mb-4">eht_getBalance</h5>
+                      <p class="text-dark-gray text-sm">
+                        The `earliest` parameter will not work as expected
+                        currently, because genesis block balances are not
+                        currently imported
+                      </p>
+                      <span class="api-button api-button-blue mb-5"
+                        >curl -X POST --data '{"id":0,"jsonrpc":"2.0","method":
+                        "eth_blockNumber","params": []}'</span
+                      >
+
+                      <div
+                        class="card mt-4 border-0 rounded-lg bg-light-gray p-3"
+                      >
+                        <pre id="ethBalance" class="text-dark-gray"></pre>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <div class="p-4 d-flex flex-column">
+                      <div class="mb-auto">
+                        <button class="api-button btn api-button-blue px-4">
+                          Post
+                        </button>
+                      </div>
+                      <div>
+                        <p class="font-weight-lighter text-dark-gray">
+                          More detail
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="border-bottom">
+                <div class="row">
+                  <div class="col-10">
+                    <div class="p-4 align-items-center w-f">
+                      <h5 class="mb-4">eht_getLost</h5>
+                      <p class="text-dark-gray text-sm">
+                        Will never return more than 1000 log entries. For this
+                        reason, you can use pagination options to request the
+                        next page. Pagination options params: {"logIndex": "3D",
+                        "blockNumber": "6423AC", "transactionIndex": 53} which
+                        include parameters from the last log received from the
+                        previous request. These three parameters are required
+                        for pagination.
+                      </p>
+                      <span class="api-button api-button-blue mb-5"
+                        >curl -X POST --data '{"id":0,"jsonrpc":"2.0","method":
+                        "eth_getLogs","params": []}'</span
+                      >
+
+                      <div
+                        class="card mt-4 border-0 rounded-lg bg-light-gray p-3"
+                      >
+                        <pre id="ethLogs" class="text-dark-gray"></pre>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-2 d-flex justify-content-center">
+                    <div class="p-4 d-flex flex-column">
+                      <div class="mb-auto">
+                        <button class="api-button btn api-button-blue px-4">
+                          Post
+                        </button>
+                      </div>
+                      <div>
+                        <p class="font-weight-lighter text-dark-gray">
+                          More detail
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -492,9 +407,60 @@
     integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
     crossorigin="anonymous"
   ></script>
+
   <script>
-    $(document).ready(function () {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
+    const dataEthBlock = {
+      id: 0,
+      jsonrpc: "2.0",
+      method: "eth_blockNumber",
+      params: [],
+    };
+
+    const dataEthBalace = {
+      id: 0,
+      jsonrpc: "2.0",
+      method: "eth_getBalance",
+      params: ["0x0000000000000000000000000000000000000007"],
+      latest: "",
+    };
+
+    const dataEthLogs = {
+      id: 0,
+      jsonrpc: "2.0",
+      method: "eth_getLogs",
+      params: [
+        {
+          address: "0xc78Be425090Dbd437532594D12267C5934Cc6c6f",
+          paging_options: {
+            logIndex: "3D",
+            blockNumber: "6423AC",
+            transactionIndex: 53,
+          },
+          fromBlock: "earliest",
+          toBlock: "latest",
+          topics: [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          ],
+        },
+      ],
+    };
+
+    document.getElementById("ethBlock").innerHTML = JSON.stringify(
+      dataEthBlock,
+      null,
+      5
+    );
+
+    document.getElementById("ethBalance").innerHTML = JSON.stringify(
+      dataEthBalace,
+      null,
+      5
+    );
+
+    document.getElementById("ethLogs").innerHTML = JSON.stringify(
+      dataEthLogs,
+      null,
+      5
+    );
   </script>
 </html>

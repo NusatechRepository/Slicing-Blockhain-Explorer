@@ -17,7 +17,7 @@
   <body>
     <!-- ================== Header ============ -->
     <nav class="navbar navbar-expand-lg navbar-light mx-4 py-2">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="../../index.html">
         <img src="../../assets/images/logo.png" alt="" />
       </a>
       <button
@@ -54,13 +54,11 @@
               <div class="dropdown-divider"></div>
               <a
                 class="dropdown-item text-dark-gray"
-                href="/pages/uncles/uncles.html"
+                href="../uncles/uncles.html"
                 >Uncless</a
               >
               <div class="dropdown-divider"></div>
-              <a
-                class="dropdown-item text-dark-gray"
-                href="/pages/reogs/reogs.html"
+              <a class="dropdown-item text-dark-gray" href="../reogs/reogs.html"
                 >Forked Blocks (Reorgs)</a
               >
               <div class="dropdown-divider"></div>
@@ -84,11 +82,15 @@
             <div class="dropdown-menu p-2">
               <a
                 class="dropdown-item text-dark-gray"
-                href="/pages/validated/validated.html"
+                href="../validated/validated.html"
                 >Validated</a
               >
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-dark-gray" href="#">Pending</a>
+              <a
+                class="dropdown-item text-dark-gray"
+                href="../transaction/pendingTransaction.html"
+                >Pending</a
+              >
             </div>
           </li>
 
@@ -126,11 +128,13 @@
             <div class="dropdown-menu dropdown-menu-left p-2">
               <a class="dropdown-item text-dark-gray" href="#">GraphQL</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-dark-gray" href="pages/api/RPC.html"
+              <a class="dropdown-item text-dark-gray" href="../api/RPC.html"
                 >RPC</a
               >
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-dark-gray" href="#">ETH RPC</a>
+              <a class="dropdown-item text-dark-gray" href="../api/ethRPC.html"
+                >ETH RPC</a
+              >
             </div>
           </li>
 
@@ -223,7 +227,7 @@
       <!-- ======== End Banner Section ================ -->
 
       <section class="main-content">
-        <div class="mx-5 py-5">
+        <div class="container-fluid py-5">
           <!-- Card Transaction header -->
           <div class="card border-0 rounded-md shadow-sm p-4">
             <div class="d-flex gap-3 align-items-center">
@@ -239,69 +243,71 @@
 
           <!-- Card transaction col -->
           <div class="mt-4">
-            <div
-              class="d-flex gap-4 justify-content-between align-items-center"
-            >
-              <div class="card w-full border-0 rounded-md shadow-sm p-4">
-                <div class="d-flex gap-3 align-items-center">
-                  <h5 class="m-0">Account Address</h5>
-                </div>
-                <div class="d-flex gap-10 mt-4">
-                  <div>
-                    <p class="text-sm text-dark-gray">Total</p>
-                    <h5 class="m-0">117,986</h5>
+            <div class="row">
+              <div class="mb-2 col-12 col-md-6">
+                <div class="card w-full border-0 rounded-md shadow-sm p-4">
+                  <div class="d-flex gap-3 align-items-center">
+                    <h5 class="m-0">Account Address</h5>
                   </div>
-                  <div>
-                    <p class="text-sm text-dark-gray">24 Hours</p>
-                    <h5 class="m-0 text-teal">
-                      <span
-                        ><svg
-                          width="27"
-                          height="16"
-                          viewBox="0 0 27 16"
-                          fill="none"
-                          class="mr-2"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.599089 15.0667C0.354644 14.8222 0.232422 14.5164 0.232422 14.1493C0.232422 13.7831 0.354644 13.4667 0.599089 13.2L8.59909 5.13333C8.73242 5.02222 8.87687 4.93333 9.03242 4.86667C9.18798 4.8 9.35464 4.76667 9.53242 4.76667C9.7102 4.76667 9.88264 4.8 10.0498 4.86667C10.216 4.93333 10.3546 5.02222 10.4658 5.13333L14.8658 9.53333L21.7991 2.66667H19.6658C19.288 2.66667 18.9715 2.53911 18.7164 2.284C18.4604 2.028 18.3324 1.71111 18.3324 1.33333C18.3324 0.955556 18.4604 0.638667 18.7164 0.382667C18.9715 0.127556 19.288 0 19.6658 0H24.9991C25.3769 0 25.6933 0.127556 25.9484 0.382667C26.2044 0.638667 26.3324 0.955556 26.3324 1.33333V6.66667C26.3324 7.04444 26.2044 7.36089 25.9484 7.616C25.6933 7.872 25.3769 8 24.9991 8C24.6213 8 24.3049 7.872 24.0498 7.616C23.7938 7.36089 23.6658 7.04444 23.6658 6.66667V4.53333L15.7991 12.4C15.6658 12.5333 15.5213 12.6276 15.3658 12.6827C15.2102 12.7387 15.0435 12.7667 14.8658 12.7667C14.688 12.7667 14.5213 12.7387 14.3658 12.6827C14.2102 12.6276 14.0658 12.5333 13.9324 12.4L9.53242 8L2.43242 15.1C2.18798 15.3444 1.88798 15.4667 1.53242 15.4667C1.17687 15.4667 0.865755 15.3333 0.599089 15.0667Z"
-                            fill="#07B1AA"
-                          />
-                        </svg>
-                      </span>
-                      698,334
-                    </h5>
+                  <div class="d-flex gap-10 mt-4">
+                    <div>
+                      <p class="text-sm text-dark-gray">Total</p>
+                      <h5 class="m-0">117,986</h5>
+                    </div>
+                    <div>
+                      <p class="text-sm text-dark-gray">24 Hours</p>
+                      <h5 class="m-0 text-teal">
+                        <span
+                          ><svg
+                            width="27"
+                            height="16"
+                            viewBox="0 0 27 16"
+                            fill="none"
+                            class="mr-2"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M0.599089 15.0667C0.354644 14.8222 0.232422 14.5164 0.232422 14.1493C0.232422 13.7831 0.354644 13.4667 0.599089 13.2L8.59909 5.13333C8.73242 5.02222 8.87687 4.93333 9.03242 4.86667C9.18798 4.8 9.35464 4.76667 9.53242 4.76667C9.7102 4.76667 9.88264 4.8 10.0498 4.86667C10.216 4.93333 10.3546 5.02222 10.4658 5.13333L14.8658 9.53333L21.7991 2.66667H19.6658C19.288 2.66667 18.9715 2.53911 18.7164 2.284C18.4604 2.028 18.3324 1.71111 18.3324 1.33333C18.3324 0.955556 18.4604 0.638667 18.7164 0.382667C18.9715 0.127556 19.288 0 19.6658 0H24.9991C25.3769 0 25.6933 0.127556 25.9484 0.382667C26.2044 0.638667 26.3324 0.955556 26.3324 1.33333V6.66667C26.3324 7.04444 26.2044 7.36089 25.9484 7.616C25.6933 7.872 25.3769 8 24.9991 8C24.6213 8 24.3049 7.872 24.0498 7.616C23.7938 7.36089 23.6658 7.04444 23.6658 6.66667V4.53333L15.7991 12.4C15.6658 12.5333 15.5213 12.6276 15.3658 12.6827C15.2102 12.7387 15.0435 12.7667 14.8658 12.7667C14.688 12.7667 14.5213 12.7387 14.3658 12.6827C14.2102 12.6276 14.0658 12.5333 13.9324 12.4L9.53242 8L2.43242 15.1C2.18798 15.3444 1.88798 15.4667 1.53242 15.4667C1.17687 15.4667 0.865755 15.3333 0.599089 15.0667Z"
+                              fill="#07B1AA"
+                            />
+                          </svg>
+                        </span>
+                        698,334
+                      </h5>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="card w-full border-0 rounded-md shadow-sm p-4">
-                <div class="d-flex gap-3 align-items-center">
-                  <h5 class="m-0">Active Accounts</h5>
-                </div>
-                <div class="d-flex gap-10 mt-4">
-                  <div>
-                    <p class="text-sm text-dark-gray">Daily Activate Acc</p>
-                    <h5 class="m-0">1,458,478</h5>
+              <div class="col-12 col-md-6">
+                <div class="card w-full border-0 rounded-md shadow-sm p-4">
+                  <div class="d-flex gap-3 align-items-center">
+                    <h5 class="m-0">Active Accounts</h5>
                   </div>
-                  <div>
-                    <p class="text-sm text-dark-gray">24 Hours</p>
-                    <h5 class="m-0 text-red">
-                      <span>
-                        <svg
-                          width="27"
-                          height="16"
-                          viewBox="0 0 27 16"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M19.6659 15.9997C19.2881 15.9997 18.9717 15.8717 18.7166 15.6157C18.4606 15.3606 18.3326 15.0442 18.3326 14.6664C18.3326 14.2886 18.4606 13.9722 18.7166 13.7171C18.9717 13.4611 19.2881 13.3331 19.6659 13.3331H21.7992L14.8659 6.46641L10.4659 10.8664C10.3548 10.9775 10.2161 11.0664 10.0499 11.1331C9.88277 11.1997 9.71033 11.2331 9.53255 11.2331C9.35477 11.2331 9.18811 11.1997 9.03255 11.1331C8.877 11.0664 8.73255 10.9775 8.59922 10.8664L0.565885 2.76641C0.321441 2.52196 0.199219 2.22196 0.199219 1.86641C0.199219 1.51085 0.332552 1.19974 0.599219 0.933072C0.843663 0.688628 1.15477 0.566406 1.53255 0.566406C1.91033 0.566406 2.22144 0.688628 2.46588 0.933072L9.53255 7.99974L13.9326 3.59974C14.0659 3.46641 14.2103 3.37174 14.3659 3.31574C14.5214 3.26063 14.6881 3.23307 14.8659 3.23307C15.0437 3.23307 15.2103 3.26063 15.3659 3.31574C15.5214 3.37174 15.6659 3.46641 15.7992 3.59974L23.6659 11.4664V9.33307C23.6659 8.9553 23.7939 8.63841 24.0499 8.38241C24.305 8.12729 24.6214 7.99974 24.9992 7.99974C25.377 7.99974 25.6934 8.12729 25.9486 8.38241C26.2046 8.63841 26.3326 8.9553 26.3326 9.33307V14.6664C26.3326 15.0442 26.2046 15.3606 25.9486 15.6157C25.6934 15.8717 25.377 15.9997 24.9992 15.9997H19.6659Z"
-                            fill="#FF4445"
-                          />
-                        </svg>
-                      </span>
-                      4,998,612
-                    </h5>
+                  <div class="d-flex gap-10 mt-4">
+                    <div>
+                      <p class="text-sm text-dark-gray">Daily Activate Acc</p>
+                      <h5 class="m-0">1,458,478</h5>
+                    </div>
+                    <div>
+                      <p class="text-sm text-dark-gray">24 Hours</p>
+                      <h5 class="m-0 text-red">
+                        <span>
+                          <svg
+                            width="27"
+                            height="16"
+                            viewBox="0 0 27 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M19.6659 15.9997C19.2881 15.9997 18.9717 15.8717 18.7166 15.6157C18.4606 15.3606 18.3326 15.0442 18.3326 14.6664C18.3326 14.2886 18.4606 13.9722 18.7166 13.7171C18.9717 13.4611 19.2881 13.3331 19.6659 13.3331H21.7992L14.8659 6.46641L10.4659 10.8664C10.3548 10.9775 10.2161 11.0664 10.0499 11.1331C9.88277 11.1997 9.71033 11.2331 9.53255 11.2331C9.35477 11.2331 9.18811 11.1997 9.03255 11.1331C8.877 11.0664 8.73255 10.9775 8.59922 10.8664L0.565885 2.76641C0.321441 2.52196 0.199219 2.22196 0.199219 1.86641C0.199219 1.51085 0.332552 1.19974 0.599219 0.933072C0.843663 0.688628 1.15477 0.566406 1.53255 0.566406C1.91033 0.566406 2.22144 0.688628 2.46588 0.933072L9.53255 7.99974L13.9326 3.59974C14.0659 3.46641 14.2103 3.37174 14.3659 3.31574C14.5214 3.26063 14.6881 3.23307 14.8659 3.23307C15.0437 3.23307 15.2103 3.26063 15.3659 3.31574C15.5214 3.37174 15.6659 3.46641 15.7992 3.59974L23.6659 11.4664V9.33307C23.6659 8.9553 23.7939 8.63841 24.0499 8.38241C24.305 8.12729 24.6214 7.99974 24.9992 7.99974C25.377 7.99974 25.6934 8.12729 25.9486 8.38241C26.2046 8.63841 26.3326 8.9553 26.3326 9.33307V14.6664C26.3326 15.0442 26.2046 15.3606 25.9486 15.6157C25.6934 15.8717 25.377 15.9997 24.9992 15.9997H19.6659Z"
+                              fill="#FF4445"
+                            />
+                          </svg>
+                        </span>
+                        4,998,612
+                      </h5>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -314,41 +320,43 @@
             <div
               class="bg-white w-full rounded-lg overflow-hidden border-0 shadow-sm"
             >
-              <table class="table bg-white border-0 p-5">
-                <thead class="text-dark-gray">
-                  <tr class="">
-                    <th scope="col" class="font-light border-top-0 py-3">
-                      Rank Account
-                    </th>
-                    <th scope="col" class="font-light border-top-0 py-3">
-                      Address Account
-                    </th>
-                    <th scope="col" class="font-light border-top-0 py-3">
-                      Name Tag
-                    </th>
-                    <th
-                      scope="col"
-                      class="font-light border-top-0 py-3 text-center"
-                    >
-                      Balance
-                    </th>
-                    <th scope="col" class="font-light border-top-0 py-3">
-                      Transaction Count
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th class="text-teal font-light">
-                      <a href="#" class="text-dark-blue">#1</a>
-                    </th>
-                    <td class="text-teal">0x661d0f14fbc850650...</td>
-                    <td class="text-slate">-</td>
-                    <td class="text-slate">47,845 CTNFT</td>
-                    <td class="text-slate">19 Transactions Sent</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="table-responsive">
+                <table class="table bg-white border-0 p-5">
+                  <thead class="text-dark-gray">
+                    <tr class="">
+                      <th scope="col" class="font-light border-top-0 py-3">
+                        Rank Account
+                      </th>
+                      <th scope="col" class="font-light border-top-0 py-3">
+                        Address Account
+                      </th>
+                      <th scope="col" class="font-light border-top-0 py-3">
+                        Name Tag
+                      </th>
+                      <th
+                        scope="col"
+                        class="font-light border-top-0 py-3 text-center"
+                      >
+                        Balance
+                      </th>
+                      <th scope="col" class="font-light border-top-0 py-3">
+                        Transaction Count
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th class="text-teal font-light">
+                        <a href="#" class="text-dark-blue">#1</a>
+                      </th>
+                      <td class="text-teal">0x661d0f14fbc850650...</td>
+                      <td class="text-slate">-</td>
+                      <td class="text-slate">47,845 CTNFT</td>
+                      <td class="text-slate">19 Transactions Sent</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -357,79 +365,87 @@
 
     <footer class="footer mt-auto">
       <div class="px-4 py-5">
-        <div class="d-flex">
-          <div class="col-3">
-            <h5 class="banner-hero-brand mb-3">
-              <span class="text-white">Nusa</span>
-              <span class="text-teal">Explorer</span>
-            </h5>
-            <p class="text-white">
-              Nusa<span class="text-teal">explorer</span> is a tool for
-              inspecting and analyzing EVM based blockchains. Blockchain
-              explorer for Ethereum Networks.
-            </p>
-          </div>
-          <div class="col-2">
-            <h6 class="text-white">Nusaexplorer</h6>
-            <div class="pl-3">
-              <ul>
-                <li class="text-white mb-2 text-sm">Submit an Issue</li>
-                <li class="text-white mb-2 text-sm">Contribute</li>
-                <li class="text-white mb-2 text-sm">Chat (#blockscout)</li>
-                <li class="text-white mb-2 text-sm">Discussions</li>
-                <li class="text-white mb-2 text-sm">Staking stats</li>
-                <li class="text-white mb-2 text-sm">
-                  Gnosis Chain Usage stats
-                </li>
-                <li class="text-white mb-2 text-sm">
-                  <span>Add Gnosis Chain</span>
-                </li>
-              </ul>
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-3 mb-2">
+            <div>
+              <h5 class="banner-hero-brand mb-3">
+                <span class="text-white">Nusa</span>
+                <span class="text-teal">Explorer</span>
+              </h5>
+              <p class="text-white">
+                Nusa<span class="text-teal">explorer</span> is a tool for
+                inspecting and analyzing EVM based blockchains. Blockchain
+                explorer for Ethereum Networks.
+              </p>
             </div>
           </div>
-          <div class="col-2">
-            <h6 class="text-white">Main Networks</h6>
-            <div class="pl-3">
-              <ul>
-                <li class="text-white mb-2 text-sm">Ethereum</li>
-                <li class="text-white mb-2 text-sm">Ethereum Classic</li>
-                <li class="text-white mb-2 text-sm">
-                  Optimism on Gnosis Chain
-                </li>
-                <li class="text-white mb-2 text-sm">POA</li>
-                <li class="text-white mb-2 text-sm">RSK</li>
-                <li class="text-white mb-2 text-sm">ARTIS Σ</li>
-                <li class="text-white mb-2 text-sm">
-                  <span>LUKSO L14</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-2">
-            <h6 class="text-white">API's</h6>
-            <div class="pl-3">
-              <ul>
-                <li class="text-white mb-2 text-sm">GraphQL</li>
-                <li class="text-white mb-2 text-sm">RPC</li>
-                <li class="text-white mb-2 text-sm">ETH RPC</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-2">
-            <h6 class="text-white">Bridges</h6>
-            <div class="pl-3">
-              <ul>
-                <li class="text-white mb-2 text-sm">xDai Bridge</li>
-                <li class="text-white mb-2 text-sm">Omni Bridge</li>
-                <li class="text-white mb-2 text-sm">Binance Bridge</li>
-                <li class="text-white mb-2 text-sm">xDai Bridge Stats</li>
-                <li class="text-white mb-2 text-sm">Omni Stats</li>
-                <li class="text-white mb-2 text-sm">Omni Stable Stats</li>
-                <li class="text-white mb-2 text-sm">Omni AMB Live Monitor</li>
-                <li class="text-white mb-2 text-sm">
-                  Binance AMB Live Monitor
-                </li>
-              </ul>
+          <div class="col-12 col-md-12 col-lg-9">
+            <div class="row">
+              <div class="col-12 col-md-3 col-xl-3 mb-2">
+                <h6 class="text-white">Nusaexplorer</h6>
+                <div class="pl-3">
+                  <ul>
+                    <li class="text-white mb-2 text-sm">Submit an Issue</li>
+                    <li class="text-white mb-2 text-sm">Contribute</li>
+                    <li class="text-white mb-2 text-sm">Chat (#blockscout)</li>
+                    <li class="text-white mb-2 text-sm">Discussions</li>
+                    <li class="text-white mb-2 text-sm">Staking stats</li>
+                    <li class="text-white mb-2 text-sm">
+                      Gnosis Chain Usage stats
+                    </li>
+                    <li class="text-white mb-2 text-sm">
+                      <span>Add Gnosis Chain</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-3 col-xl-3 mb-2">
+                <h6 class="text-white">Main Networks</h6>
+                <div class="pl-3">
+                  <ul>
+                    <li class="text-white mb-2 text-sm">Ethereum</li>
+                    <li class="text-white mb-2 text-sm">Ethereum Classic</li>
+                    <li class="text-white mb-2 text-sm">
+                      Optimism on Gnosis Chain
+                    </li>
+                    <li class="text-white mb-2 text-sm">POA</li>
+                    <li class="text-white mb-2 text-sm">RSK</li>
+                    <li class="text-white mb-2 text-sm">ARTIS Σ</li>
+                    <li class="text-white mb-2 text-sm">
+                      <span>LUKSO L14</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-3 col-xl-3 mb-2">
+                <h6 class="text-white">API's</h6>
+                <div class="pl-3">
+                  <ul>
+                    <li class="text-white mb-2 text-sm">GraphQL</li>
+                    <li class="text-white mb-2 text-sm">RPC</li>
+                    <li class="text-white mb-2 text-sm">ETH RPC</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-3 col-xl-3 mb-2">
+                <h6 class="text-white">Bridges</h6>
+                <div class="pl-3">
+                  <ul>
+                    <li class="text-white mb-2 text-sm">xDai Bridge</li>
+                    <li class="text-white mb-2 text-sm">Omni Bridge</li>
+                    <li class="text-white mb-2 text-sm">Binance Bridge</li>
+                    <li class="text-white mb-2 text-sm">xDai Bridge Stats</li>
+                    <li class="text-white mb-2 text-sm">Omni Stats</li>
+                    <li class="text-white mb-2 text-sm">Omni Stable Stats</li>
+                    <li class="text-white mb-2 text-sm">
+                      Omni AMB Live Monitor
+                    </li>
+                    <li class="text-white mb-2 text-sm">
+                      Binance AMB Live Monitor
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>

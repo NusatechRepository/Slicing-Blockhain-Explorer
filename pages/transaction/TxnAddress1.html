@@ -17,7 +17,7 @@
   <body>
     <!-- ================== Header ============ -->
     <nav class="navbar navbar-expand-lg navbar-light mx-4 py-2">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="../../index.html">
         <img src="../../assets/images/logo.png" alt="" />
       </a>
       <button
@@ -43,24 +43,22 @@
               aria-expanded="false"
             >
               <img src="../../assets/icon/icon_blockchain.svg" alt="" />
-              <span class="ml-2 text-secondary"> Block </span>
+              <span class="ml-2 navbar-link">Block</span>
             </a>
             <div class="dropdown-menu p-2">
               <a
-                class="dropdown-item active text-white"
+                class="dropdown-item text-dark-gray"
                 href="../blocks/blocks.html"
                 >Blocks</a
               >
               <div class="dropdown-divider"></div>
               <a
                 class="dropdown-item text-dark-gray"
-                href="/pages/uncles/uncles.html"
+                href="../uncles/uncles.html"
                 >Uncless</a
               >
               <div class="dropdown-divider"></div>
-              <a
-                class="dropdown-item text-dark-gray"
-                href="/pages/reogs/reogs.html"
+              <a class="dropdown-item text-dark-gray" href="../reogs/reogs.html"
                 >Forked Blocks (Reorgs)</a
               >
               <div class="dropdown-divider"></div>
@@ -72,19 +70,19 @@
 
           <li class="nav-item dropdown">
             <a
-              class="nav-link dropdown-toggle navbar-item"
+              class="nav-link dropdown-toggle navbar-item active"
               href="#"
               role="button"
               data-toggle="dropdown"
               aria-expanded="false"
             >
-              <img src="../../assets/icon/icon_blockchain.svg" alt="" />
-              <span class="ml-2 text-secondary">Transaction</span>
+              <img src="../../assets/icon/icon_nav_transaction.svg" alt="" />
+              <span class="ml-2 navbar-link">Transaction</span>
             </a>
             <div class="dropdown-menu p-2">
               <a
                 class="dropdown-item text-dark-gray"
-                href="pages/validated/validated.html"
+                href="../validated/validated.html"
                 >Validated</a
               >
               <div class="dropdown-divider"></div>
@@ -93,16 +91,19 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link text-secondary navbar-item">
+            <a href="../account/account.html" class="nav-link navbar-item">
               <img src="../../assets/icon/icon_user_outline.svg" alt="" />
-              <span class="text-secondary ml-2">Accounts</span>
+              <span class="navbar-link ml-2">Accounts</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link text-secondary navbar-item">
+            <a
+              href="../tokens/tokens.html"
+              class="nav-link text-secondary navbar-item"
+            >
               <img src="../../assets/icon/icon_coin_stack.svg" alt="" />
-              <span class="text-secondary ml-2">Tokens</span>
+              <span class="navbar-link ml-2">Tokens</span>
             </a>
           </li>
 
@@ -115,14 +116,18 @@
               aria-expanded="false"
             >
               <img src="../../assets/icon/icon_api.svg" alt="" />
-              <span class="ml-2 text-secondary"> API's </span>
+              <span class="ml-2 navbar-link"> API's </span>
             </a>
             <div class="dropdown-menu dropdown-menu-left p-2">
               <a class="dropdown-item text-dark-gray" href="#">GraphQL</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-dark-gray" href="#">RPC</a>
+              <a class="dropdown-item text-dark-gray" href="../api/RPC.html"
+                >RPC</a
+              >
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-dark-gray" href="#">ETH RPC</a>
+              <a class="dropdown-item text-dark-gray" href="../api/ethRPC.html"
+                >ETH RPC</a
+              >
             </div>
           </li>
 

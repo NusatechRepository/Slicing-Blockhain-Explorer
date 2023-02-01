@@ -13,11 +13,22 @@
   --orange: #ef8943;
   --dark-teal: #24ae8f;
   --green: #80d6a1;
+  --bright-teal: rgba(7, 177, 170, 10%);
 }
 
 .api-button {
-  padding: 8px;
+  padding: 7px;
   border-radius: 6px;
-  color: var(--dark-blue);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.api-button-teal {
+  background-color: var(--bright-teal);
+  color: var(--teal);
+}
+
+.api-button-blue {
   background-color: rgba(10, 91, 224, 10%);
+  color: var(--dark-blue);
 }
