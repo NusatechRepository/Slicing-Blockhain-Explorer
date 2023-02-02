@@ -66,4 +66,6 @@ new Chart(ctx, {
       },
     },
   },
+  maintainAspectRatio: true,
+  resizeDelay: 200,
 });

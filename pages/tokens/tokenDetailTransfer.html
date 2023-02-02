@@ -1,488 +1,623 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="./reogs.styles.css" />
+    <title>Token Detail Page</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
-  <link rel="stylesheet" href="../../styles/global.css" />
-  <link rel="stylesheet" href="./reogs.styles.css" />
-  <title>Token Detail Page</title>
-</head>
+  <body>
+    <!-- ================== Header ============ -->
+    <nav class="navbar navbar-expand-lg navbar-light py-2">
+      <a class="navbar-brand" href="/">
+        <img src="../../assets/images/logo.png" alt="" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<body>
-  <!-- ================== Header ============ -->
-  <nav class="navbar navbar-expand-lg navbar-light mx-4 py-2">
-    <a class="navbar-brand" href="/">
-      <img src="../../assets/images/logo.png" alt="" />
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto navbar-item-menu">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle navbar-item" href="#" role="button" data-toggle="dropdown"
-            aria-expanded="false">
-            <img src="../../assets/icon/icon_blockchain.svg" alt="" />
-            <span class="ml-2 navbar-link">Block</span>
-          </a>
-          <div class="dropdown-menu p-2">
-            <a class="dropdown-item text-dark-gray" href="../blocks/blocks.html">Blocks</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="../uncles/uncles.html">Uncless</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="../reogs/reogs.html">Forked Blocks (Reorgs)</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="#">Verifed Contract</a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle navbar-item" href="#" role="button" data-toggle="dropdown"
-            aria-expanded="false">
-            <img src="../../assets/icon/icon_nav_transaction.svg" alt="" />
-            <span class="ml-2 navbar-link">Transaction</span>
-          </a>
-          <div class="dropdown-menu p-2">
-            <a class="dropdown-item text-dark-gray" href="../validated/validated.html">Validated</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="#">Pending</a>
-          </div>
-        </li>
-
-        <li class="nav-item">
-          <a href="../account/account.html" class="nav-link navbar-item">
-            <img src="../../assets/icon/icon_user_outline.svg" alt="" />
-            <span class="navbar-link ml-2">Accounts</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a href="tokens.html" class="nav-link navbar-item active">
-            <img src="../../assets/icon/icon_coin_stack.svg" alt="" />
-            <span class="navbar-link ml-2">Tokens</span>
-          </a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle navbar-item" href="#" role="button" data-toggle="dropdown"
-            aria-expanded="false">
-            <img src="../../assets/icon/icon_api.svg" alt="" />
-            <span class="ml-2 navbar-link"> API's </span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-left p-2">
-            <a class="dropdown-item text-dark-gray" href="#">GraphQL</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="../api/RPC.html">RPC</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="../api/ethRPC.html">ETH RPC</a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-            <img class="" src="../../assets/icon/dot.svg" alt="" />
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg-right p-3">
-            <div>Mainnets</div>
-            <a class="dropdown-item text-center text-dark-gray" href="#">
-              Mainets
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto navbar-item-menu">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle navbar-item"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../../assets/icon/icon_blockchain.svg" alt="" />
+              <span class="ml-2 navbar-link">Block</span>
             </a>
-            <div class="dropdown-divider"></div>
-            <div>Testnet</div>
-            <a class="dropdown-item text-center text-dark-gray" href="#">
-              Testnet
+            <div class="dropdown-menu p-2">
+              <a
+                class="dropdown-item text-dark-gray"
+                href="../blocks/blocks.html"
+                >Blocks</a
+              >
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item text-dark-gray"
+                href="../uncles/uncles.html"
+                >Uncless</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="../reogs/reogs.html"
+                >Forked Blocks (Reorgs)</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="#"
+                >Verifed Contract</a
+              >
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle navbar-item"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../../assets/icon/icon_nav_transaction.svg" alt="" />
+              <span class="ml-2 navbar-link">Transaction</span>
             </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-center" href="#"> Other Networks </a>
-          </div>
-        </li>
+            <div class="dropdown-menu p-2">
+              <a
+                class="dropdown-item text-dark-gray"
+                href="../validated/validated.html"
+                >Validated</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="#">Pending</a>
+            </div>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link text-secondary">
-            <img src="../../assets/icon/icon_moon.svg" alt="" />
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- ======================== End header -->
+          <li class="nav-item">
+            <a href="../account/account.html" class="nav-link navbar-item">
+              <img src="../../assets/icon/icon_user_outline.svg" alt="" />
+              <span class="navbar-link ml-2">Accounts</span>
+            </a>
+          </li>
 
-  <main>
-    <!-- ================= Banner Section ============= -->
-    <section class="banner-hero">
-      <div class="layout py-5">
-        <div class="card border-0">
-          <div class="d-flex px-3 py-4">
-            <div class="w-full">
-              <h4 class="mb-3">Nusatech Explorer</h4>
-              <div class="input-group input-group-lg mb-3">
-                <div class="input-group-prepend filter">
-                  <button class="btn button-primary text-white font-weight-normal dropdown-toggle" type="button"
-                    data-toggle="dropdown" aria-expanded="false">
-                    All Filters
-                  </button>
-                  <div class="dropdown-menu mt-2 p-2">
-                    <a class="dropdown-item rounded-lg" href="#">All Filters</a>
-                    <a class="dropdown-item rounded-lg" href="#">Address</a>
-                    <a class="dropdown-item rounded-lg" href="#">Tokens</a>
-                    <a class="dropdown-item rounded-lg" href="#">Name Tags</a>
-                    <a class="dropdown-item rounded-lg" href="#">Labels</a>
-                    <a class="dropdown-item rounded-lg" href="#">Websites</a>
+          <li class="nav-item">
+            <a href="tokens.html" class="nav-link navbar-item active">
+              <img src="../../assets/icon/icon_coin_stack.svg" alt="" />
+              <span class="navbar-link ml-2">Tokens</span>
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle navbar-item"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../../assets/icon/icon_api.svg" alt="" />
+              <span class="ml-2 navbar-link"> API's </span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-left p-2">
+              <a class="dropdown-item text-dark-gray" href="#">GraphQL</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="../api/RPC.html"
+                >RPC</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="../api/ethRPC.html"
+                >ETH RPC</a
+              >
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img class="" src="../../assets/icon/dot.svg" alt="" />
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg-right p-3">
+              <div>Mainnets</div>
+              <a class="dropdown-item text-center text-dark-gray" href="#">
+                Mainets
+              </a>
+              <div class="dropdown-divider"></div>
+              <div>Testnet</div>
+              <a class="dropdown-item text-center text-dark-gray" href="#">
+                Testnet
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-center" href="#"> Other Networks </a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-secondary">
+              <img src="../../assets/icon/icon_moon.svg" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- ======================== End header -->
+
+    <main>
+      <!-- ================= Banner Section ============= -->
+      <section class="banner-hero">
+        <div class="layout py-5">
+          <div class="card border-0">
+            <div class="d-flex px-3 py-4">
+              <div class="w-full">
+                <h4 class="mb-3">Nusatech Explorer</h4>
+                <div class="input-group input-group-lg mb-3">
+                  <div class="input-group-prepend filter">
+                    <button
+                      class="btn button-primary text-white font-weight-normal dropdown-toggle"
+                      type="button"
+                      data-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      All Filters
+                    </button>
+                    <div class="dropdown-menu mt-2 p-2">
+                      <a class="dropdown-item rounded-lg" href="#"
+                        >All Filters</a
+                      >
+                      <a class="dropdown-item rounded-lg" href="#">Address</a>
+                      <a class="dropdown-item rounded-lg" href="#">Tokens</a>
+                      <a class="dropdown-item rounded-lg" href="#">Name Tags</a>
+                      <a class="dropdown-item rounded-lg" href="#">Labels</a>
+                      <a class="dropdown-item rounded-lg" href="#">Websites</a>
+                    </div>
                   </div>
-                </div>
-                <input type="text" class="form-control search-coin"
-                  placeholder="Search by Address / Transaction Hash / Block / Token"
-                  aria-label="Text input with dropdown button" />
-                <div class="input-group-append">
-                  <button class="btn button-teal text-white" type="button" id="button-addon2">
-                    <img src="../../assets/icon/icon_search.svg" alt="" />
-                  </button>
+                  <input
+                    type="text"
+                    class="form-control search-coin"
+                    placeholder="Search by Address / Transaction Hash / Block / Token"
+                    aria-label="Text input with dropdown button"
+                  />
+                  <div class="input-group-append">
+                    <button
+                      class="btn button-teal text-white"
+                      type="button"
+                      id="button-addon2"
+                    >
+                      <img src="../../assets/icon/icon_search.svg" alt="" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- <img src="./assets/images/Banner.png" alt="" srcset="" /> -->
-    </section>
-    <!-- ======== End Banner Section ================ -->
+        <!-- <img src="./assets/images/Banner.png" alt="" srcset="" /> -->
+      </section>
+      <!-- ======== End Banner Section ================ -->
 
-    <section class="main-content">
-      <div class="layout py-5">
-        <div class="mb-5">
-          <div class="row">
-            <div class="col mb-2">
-              <div class="card border-0 rounded-lg p-3 w-full">
-                <div class="bg-light-gray p-4 rounded-lg">
-                  <h6>Token Supply</h6>
-                  <h5>10,000,000,000 ADT</h5>
-                </div>
-                <div class="mt-3">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                      <h6>Ardhana Digital Technology (ADT)</h6>
+      <section class="main-content">
+        <div class="layout py-5">
+          <div class="mb-5">
+            <div class="row">
+              <div class="col mb-2">
+                <div class="card border-0 rounded-lg p-3 w-full">
+                  <div class="bg-light-gray p-4 rounded-lg">
+                    <h6>Token Supply</h6>
+                    <h5>10,000,000,000 ADT</h5>
+                  </div>
+                  <div class="mt-3">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <div>
+                        <h6>Ardhana Digital Technology (ADT)</h6>
+                      </div>
+                      <div class="d-flex align-items-center mt-3 gap-2">
+                        <img
+                          width="35"
+                          src="../../assets/icon/icon_outline_copy.svg"
+                          alt=""
+                        />
+                        <div
+                          class="cursor-pointer"
+                          data-toggle="modal"
+                          data-target="#modalQRCode"
+                        >
+                          <img
+                            src="../../assets/icon/icon_barcode.svg"
+                            alt=""
+                          />
+                        </div>
+                      </div>
                     </div>
-                    <div class="d-flex align-items-center mt-3 gap-2">
-                      <img width="35" src="../../assets/icon/icon_outline_copy.svg" alt="" />
-                      <div class="cursor-pointer" data-toggle="modal" data-target="#modalQRCode">
-                        <img src="../../assets/icon/icon_barcode.svg" alt="" />
+                    <div class="mt-3">
+                      <p class="text-dark-blue">
+                        0x85E96771c0BE9aD0e008Db9bc55816f185b5e1d7
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card border-0 rounded-lg w-full">
+                  <div class="border-bottom rounded-lg">
+                    <div class="p-3">
+                      <h6 class="m-0">Informations</h6>
+                    </div>
+                  </div>
+                  <div class="p-3">
+                    <div class="d-flex mb-3">
+                      <div class="col-4">
+                        <h6>• Contract :</h6>
+                      </div>
+                      <div>
+                        <p class="text-teal text-sm m-0">
+                          0x85E96771c0BE9aD0e008Db9bc55816f185b5e1d7
+                        </p>
+                        <a
+                          href="tokenContractDetail.html"
+                          class="text-sm text-navy"
+                          >View Contract</a
+                        >
+                      </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                      <div class="col-4">
+                        <h6>• Address Connected :</h6>
+                      </div>
+                      <div>
+                        <p class="text-teal text-sm m-0">22 Addresses</p>
+                      </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                      <div class="col-4">
+                        <h6>• Total Transfer Count :</h6>
+                      </div>
+                      <div>
+                        <p class="text-teal text-sm m-0">1251 Transfers</p>
+                      </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                      <div class="col-4">
+                        <h6>• Decimal :</h6>
+                      </div>
+                      <div>
+                        <p class="text-teal text-sm m-0">8 Decimals</p>
                       </div>
                     </div>
                   </div>
-                  <div class="mt-3">
-                    <p class="text-dark-blue">
-                      0x85E96771c0BE9aD0e008Db9bc55816f185b5e1d7
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card border-0 rounded-lg w-full">
-                <div class="border-bottom rounded-lg">
-                  <div class="p-3">
-                    <h6 class="m-0">Informations</h6>
-                  </div>
-                </div>
-                <div class="p-3">
-                  <div class="d-flex mb-3">
-                    <div class="col-4">
-                      <h6>• Contract :</h6>
-                    </div>
-                    <div>
-                      <p class="text-teal text-sm m-0">
-                        0x85E96771c0BE9aD0e008Db9bc55816f185b5e1d7
-                      </p>
-                      <a href="tokenContractDetail.html" class="text-sm text-navy">View Contract</a>
-                    </div>
-                  </div>
-                  <div class="d-flex mb-2">
-                    <div class="col-4">
-                      <h6>• Address Connected :</h6>
-                    </div>
-                    <div>
-                      <p class="text-teal text-sm m-0">22 Addresses</p>
-                    </div>
-                  </div>
-                  <div class="d-flex mb-2">
-                    <div class="col-4">
-                      <h6>• Total Transfer Count :</h6>
-                    </div>
-                    <div>
-                      <p class="text-teal text-sm m-0">1251 Transfers</p>
-                    </div>
-                  </div>
-                  <div class="d-flex mb-2">
-                    <div class="col-4">
-                      <h6>• Decimal :</h6>
-                    </div>
-                    <div>
-                      <p class="text-teal text-sm m-0">8 Decimals</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="mt-5">
-          <ul class="nav nav-tabs border-0" role="tablist">
-            <li class="nav-item border-0">
-              <a class="tab nav-link border-0 active  py-3" href="#tokenTransfers" role="tab" data-toggle="tab">Token
-                Transfers</a>
-            </li>
-            <li class="nav-item border-0">
-              <a class="tab nav-link border-0  py-3" href="#holders" role="tab" data-toggle="tab">Holders</a>
-            </li>
-            <li class="nav-item border-0">
-              <a class="tab nav-link border-0  py-3" href="#inventory" role="tab" data-toggle="tab">Inventory</a>
-            </li>
-          </ul>
+          <div class="mt-5">
+            <ul class="nav nav-tabs border-0" role="tablist">
+              <li class="nav-item border-0">
+                <a
+                  class="tab nav-link border-0 active py-3"
+                  href="#tokenTransfers"
+                  role="tab"
+                  data-toggle="tab"
+                  >Token Transfers</a
+                >
+              </li>
+              <li class="nav-item border-0">
+                <a
+                  class="tab nav-link border-0 py-3"
+                  href="#holders"
+                  role="tab"
+                  data-toggle="tab"
+                  >Holders</a
+                >
+              </li>
+              <li class="nav-item border-0">
+                <a
+                  class="tab nav-link border-0 py-3"
+                  href="#inventory"
+                  role="tab"
+                  data-toggle="tab"
+                  >Inventory</a
+                >
+              </li>
+            </ul>
 
-          <!-- Tab panes -->
-          <div class="tab-content">
-            <!-- Tab content token transfer -->
-            <div role="tabpanel" class="tab-pane active" id="tokenTransfers">
-              <div class="bg-white w-full rounded-lg border-0 shadow-sm pt-3">
-                <div class="table-responsive">
-                  <table class="table bg-white border-0 p-5">
-                    <thead class="text-dark-gray">
-                      <tr class="">
-                        <th scope="col" class="font-light border-top-0 py-3">
-                          Block
-                        </th>
-                        <th scope="col" class="font-light border-top-0 py-3">
-                          Thx Hash
-                        </th>
-                        <th scope="col" class="font-light border-top-0 py-3">
-                          Time
-                        </th>
-                        <th scope="col" class="font-light border-top-0 py-3 text-center">
-                          From
-                        </th>
-                        <th scope="col" class="border-top-0"></th>
-                        <th scope="col" class="font-light border-top-0 py-3">
-                          To
-                        </th>
-                        <th scope="col" class="font-light border-top-0 py-3">
-                          Value
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="text-nowrap">
-                        <td class="text-dark-blue">#7627868</td>
-                        <th class="text-teal font-light">
-                          <a href="#" class="text-teal">0x435d95cbcac2e1a...</a>
-                        </th>
-                        <td class="text-slate text-nowrap">5 Minutes Ago</td>
-                        <td class="text-teal">
-                          <a href="#" class="text-teal">
-                            0x661d0f14fbc850650...
-                          </a>
-                        </td>
-                        <td>
-                          <img src="../../assets//images/arrow.png" alt="" />
-                        </td>
-                        <td class="text-teal">0x661d0f14fbc850650...</td>
-                        <td class="text-slate">0.2225 ADT</td>
-                      </tr>
-                    </tbody>
-                  </table>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <!-- Tab content token transfer -->
+              <div role="tabpanel" class="tab-pane active" id="tokenTransfers">
+                <div class="bg-white w-full rounded-lg border-0 shadow-sm pt-3">
+                  <div class="table-responsive">
+                    <table class="table bg-white border-0 p-5">
+                      <thead class="text-dark-gray">
+                        <tr class="">
+                          <th scope="col" class="font-light border-top-0 py-3">
+                            Block
+                          </th>
+                          <th scope="col" class="font-light border-top-0 py-3">
+                            Thx Hash
+                          </th>
+                          <th scope="col" class="font-light border-top-0 py-3">
+                            Time
+                          </th>
+                          <th
+                            scope="col"
+                            class="font-light border-top-0 py-3 text-center"
+                          >
+                            From
+                          </th>
+                          <th scope="col" class="border-top-0"></th>
+                          <th scope="col" class="font-light border-top-0 py-3">
+                            To
+                          </th>
+                          <th scope="col" class="font-light border-top-0 py-3">
+                            Value
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="text-nowrap">
+                          <td class="text-dark-blue">#7627868</td>
+                          <th class="text-teal font-light">
+                            <a href="#" class="text-teal"
+                              >0x435d95cbcac2e1a...</a
+                            >
+                          </th>
+                          <td class="text-slate text-nowrap">5 Minutes Ago</td>
+                          <td class="text-teal">
+                            <a href="#" class="text-teal">
+                              0x661d0f14fbc850650...
+                            </a>
+                          </td>
+                          <td>
+                            <img src="../../assets//images/arrow.png" alt="" />
+                          </td>
+                          <td class="text-teal">0x661d0f14fbc850650...</td>
+                          <td class="text-slate">0.2225 ADT</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
-            </div>
-            <!-- End tab content tab token transfer -->
+              <!-- End tab content tab token transfer -->
 
-            <!-- Tab Internal transaction -->
-            <div role="tabpanel" class="tab-pane" id="holders">
-              <div class="bg-white w-full rounded-lg border-0 shadow-sm">
-                <div class="table-responsive">
-                  <table class="table bg-white border-0 p-5">
-                    <thead class="text-dark-gray">
-                      <tr class="">
-                        <th scope="col" class="font-light border-top-0 py-3">
-                          Number
-                        </th>
-                        <th scope="col" class="font-light border-top-0 py-3">
-                          Address
-                        </th>
-                        <th scope="col" class="font-light border-top-0 py-3">
-                          Value Quantitiy
-                        </th>
-                        <th scope="col" class="font-light border-top-0 py-3">
-                          Precentage
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="text-nowrap">
-                        <th class="font-light">
-                          <a href="#" class="text-dark">1</a>
-                        </th>
-                        <td class="text-teal">
-                          0x85E96771c0BE9aD0e008Db9bc55816f185b5e1d7
-                        </td>
-                        <td class="text-slate">3,000,000,000 ADT</td>
-                        <td class="w-25">
-                          <div>
-                            <p class="text-right m-0 text-sm m-1">
-                              300.000 %
-                            </p>
-                          </div>
-                          <div class="progress" style="height: 8px">
-                            <div class="progress-bar bg-dark-navy" role="progressbar" style="width: 55%"
-                              aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+              <!-- Tab Internal transaction -->
+              <div role="tabpanel" class="tab-pane" id="holders">
+                <div class="bg-white w-full rounded-lg border-0 shadow-sm">
+                  <div class="table-responsive">
+                    <table class="table bg-white border-0 p-5">
+                      <thead class="text-dark-gray">
+                        <tr class="">
+                          <th scope="col" class="font-light border-top-0 py-3">
+                            Number
+                          </th>
+                          <th scope="col" class="font-light border-top-0 py-3">
+                            Address
+                          </th>
+                          <th scope="col" class="font-light border-top-0 py-3">
+                            Value Quantitiy
+                          </th>
+                          <th scope="col" class="font-light border-top-0 py-3">
+                            Precentage
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="text-nowrap">
+                          <th class="font-light">
+                            <a href="#" class="text-dark">1</a>
+                          </th>
+                          <td class="text-teal">
+                            0x85E96771c0BE9aD0e008Db9bc55816f185b5e1d7
+                          </td>
+                          <td class="text-slate">3,000,000,000 ADT</td>
+                          <td class="w-25">
+                            <div>
+                              <p class="text-right m-0 text-sm m-1">
+                                300.000 %
+                              </p>
+                            </div>
+                            <div class="progress" style="height: 8px">
+                              <div
+                                class="progress-bar bg-dark-navy"
+                                role="progressbar"
+                                style="width: 55%"
+                                aria-valuenow="25"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                              ></div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
-            </div>
-            <!-- End tab transaction -->
+              <!-- End tab transaction -->
 
-            <!-- Tab content Logs -->
-            <div role="tabpanel" class="tab-pane fade border-0 bg-white rounded-lg border-0 shadow-sm px-5 py-4"
-              id="inventory">
-              <p>There are no inventory here</p>
+              <!-- Tab content Logs -->
+              <div
+                role="tabpanel"
+                class="tab-pane fade border-0 bg-white rounded-lg border-0 shadow-sm px-5 py-4"
+                id="inventory"
+              >
+                <p>There are no inventory here</p>
+              </div>
+              <!-- End content tab Logs -->
             </div>
-            <!-- End content tab Logs -->
           </div>
         </div>
-      </div>
 
-      <!-- Modal -->
-      <div class="modal fade" id="modalQRCode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header border-0">
-              <h3 class="modal-title" id="exampleModalLabel">QR Code</h3>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="text-center">
-                <img src="../../assets/images/qrcode.png" alt="" />
-              </div>
-              <h5 class="text-center">Ardhana Digital Technology (ADT)</h5>
-            </div>
-            <div class="modal-footer border-0">
-              <div class="d-flex justify-content-center w-full">
-                <button type="button" class="btn bg-primary text-white btn-block" data-dismiss="modal">
-                  Close
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="modalQRCode"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h3 class="modal-title" id="exampleModalLabel">QR Code</h3>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+              <div class="modal-body">
+                <div class="text-center">
+                  <img src="../../assets/images/qrcode.png" alt="" />
+                </div>
+                <h5 class="text-center">Ardhana Digital Technology (ADT)</h5>
+              </div>
+              <div class="modal-footer border-0">
+                <div class="d-flex justify-content-center w-full">
+                  <button
+                    type="button"
+                    class="btn bg-primary text-white btn-block"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer mt-auto">
+      <div class="px-4 py-5">
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-3 mb-2">
+            <div>
+              <h5 class="banner-hero-brand mb-3">
+                <span class="text-white">Nusa</span>
+                <span class="text-teal">Explorer</span>
+              </h5>
+              <p class="text-white">
+                Nusa<span class="text-teal">explorer</span> is a tool for
+                inspecting and analyzing EVM based blockchains. Blockchain
+                explorer for Ethereum Networks.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-9">
+            <div class="row">
+              <div class="col-12 col-md-3 col-xl-3 mb-2">
+                <h6 class="text-white">Nusaexplorer</h6>
+                <div class="pl-3">
+                  <ul>
+                    <li class="text-white mb-2 text-sm">Submit an Issue</li>
+                    <li class="text-white mb-2 text-sm">Contribute</li>
+                    <li class="text-white mb-2 text-sm">Chat (#blockscout)</li>
+                    <li class="text-white mb-2 text-sm">Discussions</li>
+                    <li class="text-white mb-2 text-sm">Staking stats</li>
+                    <li class="text-white mb-2 text-sm">
+                      Gnosis Chain Usage stats
+                    </li>
+                    <li class="text-white mb-2 text-sm">
+                      <span>Add Gnosis Chain</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-3 col-xl-3 mb-2">
+                <h6 class="text-white">Main Networks</h6>
+                <div class="pl-3">
+                  <ul>
+                    <li class="text-white mb-2 text-sm">Ethereum</li>
+                    <li class="text-white mb-2 text-sm">Ethereum Classic</li>
+                    <li class="text-white mb-2 text-sm">
+                      Optimism on Gnosis Chain
+                    </li>
+                    <li class="text-white mb-2 text-sm">POA</li>
+                    <li class="text-white mb-2 text-sm">RSK</li>
+                    <li class="text-white mb-2 text-sm">ARTIS Σ</li>
+                    <li class="text-white mb-2 text-sm">
+                      <span>LUKSO L14</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-3 col-xl-3 mb-2">
+                <h6 class="text-white">API's</h6>
+                <div class="pl-3">
+                  <ul>
+                    <li class="text-white mb-2 text-sm">GraphQL</li>
+                    <li class="text-white mb-2 text-sm">RPC</li>
+                    <li class="text-white mb-2 text-sm">ETH RPC</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-3 col-xl-3 mb-2">
+                <h6 class="text-white">Bridges</h6>
+                <div class="pl-3">
+                  <ul>
+                    <li class="text-white mb-2 text-sm">xDai Bridge</li>
+                    <li class="text-white mb-2 text-sm">Omni Bridge</li>
+                    <li class="text-white mb-2 text-sm">Binance Bridge</li>
+                    <li class="text-white mb-2 text-sm">xDai Bridge Stats</li>
+                    <li class="text-white mb-2 text-sm">Omni Stats</li>
+                    <li class="text-white mb-2 text-sm">Omni Stable Stats</li>
+                    <li class="text-white mb-2 text-sm">
+                      Omni AMB Live Monitor
+                    </li>
+                    <li class="text-white mb-2 text-sm">
+                      Binance AMB Live Monitor
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="footer mt-auto">
-    <div class="px-4 py-5">
-      <div class="row">
-        <div class="col-12 col-md-12 col-lg-3 mb-2">
-          <div>
-            <h5 class="banner-hero-brand mb-3">
-              <span class="text-white">Nusa</span>
-              <span class="text-teal">Explorer</span>
-            </h5>
-            <p class="text-white">
-              Nusa<span class="text-teal">explorer</span> is a tool for
-              inspecting and analyzing EVM based blockchains. Blockchain
-              explorer for Ethereum Networks.
-            </p>
-          </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-9">
-          <div class="row">
-            <div class="col-12 col-md-3 col-xl-3 mb-2">
-              <h6 class="text-white">Nusaexplorer</h6>
-              <div class="pl-3">
-                <ul>
-                  <li class="text-white mb-2 text-sm">Submit an Issue</li>
-                  <li class="text-white mb-2 text-sm">Contribute</li>
-                  <li class="text-white mb-2 text-sm">Chat (#blockscout)</li>
-                  <li class="text-white mb-2 text-sm">Discussions</li>
-                  <li class="text-white mb-2 text-sm">Staking stats</li>
-                  <li class="text-white mb-2 text-sm">
-                    Gnosis Chain Usage stats
-                  </li>
-                  <li class="text-white mb-2 text-sm">
-                    <span>Add Gnosis Chain</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-12 col-md-3 col-xl-3 mb-2">
-              <h6 class="text-white">Main Networks</h6>
-              <div class="pl-3">
-                <ul>
-                  <li class="text-white mb-2 text-sm">Ethereum</li>
-                  <li class="text-white mb-2 text-sm">Ethereum Classic</li>
-                  <li class="text-white mb-2 text-sm">
-                    Optimism on Gnosis Chain
-                  </li>
-                  <li class="text-white mb-2 text-sm">POA</li>
-                  <li class="text-white mb-2 text-sm">RSK</li>
-                  <li class="text-white mb-2 text-sm">ARTIS Σ</li>
-                  <li class="text-white mb-2 text-sm">
-                    <span>LUKSO L14</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-12 col-md-3 col-xl-3 mb-2">
-              <h6 class="text-white">API's</h6>
-              <div class="pl-3">
-                <ul>
-                  <li class="text-white mb-2 text-sm">GraphQL</li>
-                  <li class="text-white mb-2 text-sm">RPC</li>
-                  <li class="text-white mb-2 text-sm">ETH RPC</li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-12 col-md-3 col-xl-3 mb-2">
-              <h6 class="text-white">Bridges</h6>
-              <div class="pl-3">
-                <ul>
-                  <li class="text-white mb-2 text-sm">xDai Bridge</li>
-                  <li class="text-white mb-2 text-sm">Omni Bridge</li>
-                  <li class="text-white mb-2 text-sm">Binance Bridge</li>
-                  <li class="text-white mb-2 text-sm">xDai Bridge Stats</li>
-                  <li class="text-white mb-2 text-sm">Omni Stats</li>
-                  <li class="text-white mb-2 text-sm">Omni Stable Stats</li>
-                  <li class="text-white mb-2 text-sm">
-                    Omni AMB Live Monitor
-                  </li>
-                  <li class="text-white mb-2 text-sm">
-                    Binance AMB Live Monitor
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-  integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"
+  ></script>
 </html>

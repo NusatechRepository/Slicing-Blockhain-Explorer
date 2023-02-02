@@ -1,615 +1,703 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="api.styles.css" />
+    <title>API RPC Page</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
-  <link rel="stylesheet" href="../../styles/global.css" />
-  <link rel="stylesheet" href="api.styles.css" />
-  <title>API RPC Page</title>
-</head>
+  <body>
+    <!-- ================== Header ============ -->
+    <nav class="navbar navbar-expand-lg navbar-light py-2">
+      <a class="navbar-brand" href="../../index.html">
+        <img src="../../assets/images/logo.png" alt="" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<body>
-  <!-- ================== Header ============ -->
-  <nav class="navbar navbar-expand-lg navbar-light mx-4 py-2">
-    <a class="navbar-brand" href="../../index.html">
-      <img src="../../assets/images/logo.png" alt="" />
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto navbar-item-menu">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle navbar-item" href="#" role="button" data-toggle="dropdown"
-            aria-expanded="false">
-            <img src="../../assets/icon/icon_blockchain.svg" alt="" />
-            <span class="ml-2"> Block </span>
-          </a>
-          <div class="dropdown-menu p-2">
-            <a class="dropdown-item text-dark-gray" href="../blocks/blocks.html">Blocks</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="../uncles/uncles.html">Uncless</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="../reogs/reogs.html">Forked Blocks (Reorgs)</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="#">Verifed Contract</a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle navbar-item" href="#" role="button" data-toggle="dropdown"
-            aria-expanded="false">
-            <img src="../../assets/icon/icon_nav_transaction.svg" alt="" />
-            <span class="ml-2 navbar-link">Transaction</span>
-          </a>
-          <div class="dropdown-menu p-2">
-            <a class="dropdown-item text-dark-gray" href="../validated/validated.html">Validated</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="../transaction/pendingTransaction.html">Pending</a>
-          </div>
-        </li>
-
-        <li class="nav-item">
-          <a href="../account/account.html" class="nav-link text-secondary navbar-item">
-            <img src="../../assets/icon/icon_user_outline.svg" alt="" />
-            <span class="navbar-link ml-2">Accounts</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a href="../tokens/tokens.html" class="nav-link text-secondary navbar-item">
-            <img src="../../assets/icon/icon_coin_stack.svg" alt="" />
-            <span class="navbar-link ml-2">Tokens</span>
-          </a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle navbar-item active" href="#" role="button" data-toggle="dropdown"
-            aria-expanded="false">
-            <img src="../../assets/icon/icon_api.svg" alt="" />
-            <span class="ml-2 navbar-link"> API's </span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-left p-2">
-            <a class="dropdown-item text-dark-gray" href="#">GraphQL</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="RPC.html">RPC</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="ethRPC.html">ETH RPC</a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-            <img class="" src="../../assets/icon/dot.svg" alt="" />
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg-right p-3">
-            <div>Mainnets</div>
-            <a class="dropdown-item text-center text-dark-gray" href="#">
-              Mainets
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto navbar-item-menu">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle navbar-item"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../../assets/icon/icon_blockchain.svg" alt="" />
+              <span class="ml-2"> Block </span>
             </a>
-            <div class="dropdown-divider"></div>
-            <div>Testnet</div>
-            <a class="dropdown-item text-center text-dark-gray" href="#">
-              Testnet
+            <div class="dropdown-menu p-2">
+              <a
+                class="dropdown-item text-dark-gray"
+                href="../blocks/blocks.html"
+                >Blocks</a
+              >
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item text-dark-gray"
+                href="../uncles/uncles.html"
+                >Uncless</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="../reogs/reogs.html"
+                >Forked Blocks (Reorgs)</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="#"
+                >Verifed Contract</a
+              >
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle navbar-item"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../../assets/icon/icon_nav_transaction.svg" alt="" />
+              <span class="ml-2 navbar-link">Transaction</span>
             </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-center" href="#"> Other Networks </a>
-          </div>
-        </li>
+            <div class="dropdown-menu p-2">
+              <a
+                class="dropdown-item text-dark-gray"
+                href="../validated/validated.html"
+                >Validated</a
+              >
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item text-dark-gray"
+                href="../transaction/pendingTransaction.html"
+                >Pending</a
+              >
+            </div>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link text-secondary">
-            <img src="../../assets/icon/icon_moon.svg" alt="" />
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- ======================== End header -->
+          <li class="nav-item">
+            <a
+              href="../account/account.html"
+              class="nav-link text-secondary navbar-item"
+            >
+              <img src="../../assets/icon/icon_user_outline.svg" alt="" />
+              <span class="navbar-link ml-2">Accounts</span>
+            </a>
+          </li>
 
-  <main>
-    <section class="main-content">
-      <div class="layout py-5">
+          <li class="nav-item">
+            <a
+              href="../tokens/tokens.html"
+              class="nav-link text-secondary navbar-item"
+            >
+              <img src="../../assets/icon/icon_coin_stack.svg" alt="" />
+              <span class="navbar-link ml-2">Tokens</span>
+            </a>
+          </li>
 
-        <div class="card border-0 shadow rounded-lg mb-5">
-          <div class="p-4">
-            <h4 class="font-weight-lighter mb-4">API Documentation</h4>
-            <p class="text-dark-navy">
-              [ Base URL: https://localhost:4000/api ]
-            </p>
-            <p class="text-dark-gray">
-              This API is provided for developers transitioning their
-              applications from Etherscan to BlockScout. It supports GET and
-              POST requests.
-            </p>
-          </div>
-          <div class="bg-light-gray">
-            <div class="row p-4">
-              <div class="col-12 col-md-5 col-lg-4">
-                <div class="row mb-4">
-                  <div class="col col-md-5">
-                    <h6 class="m-0">Account</h6>
-                  </div>
-                  <div class="col-8 col-md">
-                    <span class="api-button api-button-blue">?module=account</span>
-                  </div>
-                </div>
-                <div class="row mb-4">
-                  <div class="col col-md-5">
-                    <h6 class="m-0">Logs</h6>
-                  </div>
-                  <div class="col-8 col-md">
-                    <span class="api-button api-button-blue">?module=logs</span>
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <div class="col col-md-5">
-                    <h6 class="m-0">Token</h6>
-                  </div>
-                  <div class="col-8 col-md">
-                    <span class="api-button api-button-blue">?module=token</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-5 col-lg-4 mb-3">
-                <div class="row mb-4">
-                  <div class="col col-md-5">
-                    <h6 class="m-0">Stats</h6>
-                  </div>
-                  <div class="col-8 col-md">
-                    <span class="api-button api-button-blue">?module=stats</span>
-                  </div>
-                </div>
-                <div class="row mb-4">
-                  <div class="col col-md-5">
-                    <h6 class="m-0">Block</h6>
-                  </div>
-                  <div class="col-8 col-md">
-                    <span class="api-button api-button-blue">?module=blocks</span>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col col-md-5">
-                    <h6 class="m-0">Contract</h6>
-                  </div>
-                  <div class="col-8 col-md">
-                    <span class="api-button api-button-blue">?module=contract</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-5 col-lg-4">
-                <div class="row">
-                  <div class="col col-md-5">
-                    <h6 class="m-0">Transaction</h6>
-                  </div>
-                  <div class="col-8 col-md">
-                    <span class="api-button api-button-blue">?module=transaction</span>
-                  </div>
-                </div>
-              </div>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle navbar-item active"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../../assets/icon/icon_api.svg" alt="" />
+              <span class="ml-2 navbar-link"> API's </span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-left p-2">
+              <a class="dropdown-item text-dark-gray" href="#">GraphQL</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="RPC.html">RPC</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="ethRPC.html"
+                >ETH RPC</a
+              >
             </div>
-          </div>
-        </div>
+          </li>
 
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img class="" src="../../assets/icon/dot.svg" alt="" />
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg-right p-3">
+              <div>Mainnets</div>
+              <a class="dropdown-item text-center text-dark-gray" href="#">
+                Mainets
+              </a>
+              <div class="dropdown-divider"></div>
+              <div>Testnet</div>
+              <a class="dropdown-item text-center text-dark-gray" href="#">
+                Testnet
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-center" href="#"> Other Networks </a>
+            </div>
+          </li>
 
-        <div class="card border-0 shadow rounded-lg">
-          <div class="border-bottom p-4">
-            <div class="d-flex align-items-center gap-3">
-              <h5 class="font-weight-lighter m-0">Account</h5>
-              <span class="api-button api-button-blue">?module=stats</span>
-            </div>
-          </div>
-          <div class="border-bottom">
-            <div class="row">
-              <div class="col-12 col-md-8 col-lg-10">
-                <div class="p-4 align-items-center">
-                  <p>
-                    Mimics Ethereum JSON RPC's eth_getBalance. Returns the
-                    balance as of the provided block (defaults to latest)
-                  </p>
-                  <span
-                    class="api-button api-button-blue">?module=account&action=eth_get_balance&address={addressHash}</span>
-                  <p class="mt-3 text-dark-gray">eth_get_balance</p>
-                </div>
-              </div>
-              <div class="col-12 col-md col-lg">
-                <div class="p-4">
-                  <div class="d-flex gap-4 mb-5">
-                    <button class="btn api-button api-button-teal">
-                      Get
-                    </button>
-                    <button class="api-button btn api-button-blue">
-                      Post
-                    </button>
-                  </div>
-                  <div>
-                    <p class="font-weight-lighter text-sm">More detail</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="border-bottom">
-            <div class="row">
-              <div class="col-12 col-md-8 col-lg-10">
-                <div class="p-4 align-items-center">
-                  <p>
-                    Get balance for address. Also available through a
-                    GraphQL 'addresses' query. If the balance hasn't been
-                    updated in a long time, we will double check with the
-                    node to fetch the absolute latest balance. This will not
-                    be reflected in the current request, but once it is
-                    updated, subsequent requests will show the updated
-                    balance. If you want to know whether or not we are
-                    checking for another balance, use the `balancemulti`
-                    action. That contains a property called `stale` that
-                    will let you know to recheck that balance in the near
-                    future.
-                  </p>
-                  <span
-                    class="api-button api-button-blue">?module=account&action=eth_get_balance&address={addressHash}</span>
-                  <p class="mt-3 text-dark-gray">balance</p>
-                </div>
-              </div>
-              <div class="col-12 col-md col-lg">
-                <div class="p-4">
-                  <div class="d-flex gap-4 mb-5">
-                    <button class="btn api-button api-button-teal">
-                      Get
-                    </button>
-                    <button class="api-button btn api-button-blue">
-                      Post
-                    </button>
-                  </div>
-                  <div>
-                    <p class="font-weight-lighter text-sm">More detail</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="border-bottom">
-            <div class="row">
-              <div class="col-12 col-md-8 col-lg-10">
-                <div class="p-4 align-items-center">
-                  <p>
-                    Get balance for multiple addresses. Also available
-                    through a GraphQL 'addresses' query. If the balance
-                    hasn't been updated in a long time, we will double check
-                    with the node to fetch the absolute latest balance. This
-                    will not be reflected in the current request, but once
-                    it is updated, subsequent requests will show the updated
-                    balance. You can know that this is taking place via the
-                    `stale` attribute, which is set to `true` if a new
-                    balance is being fetched.
-                  </p>
-                  <span
-                    class="api-button api-button-blue">?module=account&action=balancemulti&address={addressHash}</span>
-                  <p class="mt-3 text-dark-gray">balancemulti</p>
-                </div>
-              </div>
-              <div class="col-12 col-md col-lg">
-                <div class="p-4">
-                  <div class="d-flex gap-4 mb-5">
-                    <button class="btn api-button api-button-teal">
-                      Get
-                    </button>
-                    <button class="api-button btn api-button-blue">
-                      Post
-                    </button>
-                  </div>
-                  <div>
-                    <p class="font-weight-lighter text-sm">More detail</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="border-bottom">
-            <div class="row">
-              <div class="col-12 col-md-8 col-lg-10">
-                <div class="p-4 align-items-center">
-                  <p>Get pending transactions by address.</p>
-                  <span
-                    class="api-button api-button-blue">?module=account&action=pendingtxlist&address={addressHash}</span>
-                  <p class="mt-3 text-dark-gray">pendingtxlist</p>
-                </div>
-              </div>
-              <div class="col-12 col-md col-lg">
-                <div class="p-4">
-                  <div class="d-flex gap-4 mb-5">
-                    <button class="btn api-button api-button-teal">
-                      Get
-                    </button>
-                    <button class="api-button btn api-button-blue">
-                      Post
-                    </button>
-                  </div>
-                  <div>
-                    <p class="font-weight-lighter text-sm">More detail</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="border-bottom">
-            <div class="row">
-              <div class="col-12 col-md-8 col-lg-10">
-                <div class="p-4 align-items-center">
-                  <p>
-                    Get transactions by address. Up to a maximum of 10,000
-                    transactions. Also available through a GraphQL 'address'
-                    query.
-                  </p>
-                  <span class="api-button api-button-blue">?module=account&action=txlist&address={addressHash}</span>
-                  <p class="mt-3 text-dark-gray">txlist</p>
-                </div>
-              </div>
-              <div class="col-12 col-md col-lg">
-                <div class="p-4">
-                  <div class="d-flex gap-4 mb-5">
-                    <button class="btn api-button api-button-teal">
-                      Get
-                    </button>
-                    <button class="api-button btn api-button-blue">
-                      Post
-                    </button>
-                  </div>
-                  <div>
-                    <p class="font-weight-lighter text-sm">More detail</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="border-bottom">
-            <div class="row">
-              <div class="col-12 col-md-8 col-lg-10">
-                <div class="p-4 align-items-center">
-                  <p>
-                    Get internal transactions by transaction or address
-                    hash. Up to a maximum of 10,000 internal transactions.
-                    Also available through a GraphQL 'transaction' query.
-                  </p>
-                  <span
-                    class="api-button api-button-blue">?module=account&action=txlistinternal&address={addressHash}</span>
-                  <p class="mt-3 text-dark-gray">txlistinternal</p>
-                </div>
-              </div>
-              <div class="col-12 col-md col-lg">
-                <div class="p-4">
-                  <div class="d-flex gap-4 mb-5">
-                    <button class="btn api-button api-button-teal">
-                      Get
-                    </button>
-                    <button class="api-button btn api-button-blue">
-                      Post
-                    </button>
-                  </div>
-                  <div>
-                    <p class="font-weight-lighter text-sm">More detail</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="border-bottom">
-            <div class="row">
-              <div class="col-12 col-md-8 col-lg-10">
-                <div class="p-4 align-items-center">
-                  <p>
-                    Get token account balance for token contract address.
-                  </p>
-                  <span
-                    class="api-button api-button-blue">?module=account&action=tokenbalance&address={addressHash}</span>
-                  <p class="mt-3 text-dark-gray">tokenbalance</p>
-                </div>
-              </div>
-              <div class="col-12 col-md col-lg">
-                <div class="p-4">
-                  <div class="d-flex gap-4 mb-5">
-                    <button class="btn api-button api-button-teal">
-                      Get
-                    </button>
-                    <button class="api-button btn api-button-blue">
-                      Post
-                    </button>
-                  </div>
-                  <div>
-                    <p class="font-weight-lighter text-sm">More detail</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="border-bottom">
-            <div class="row">
-              <div class="col-12 col-md-8 col-lg-10">
-                <div class="p-4 align-items-center">
-                  <p>Get list of tokens owned by address.</p>
-                  <span class="api-button api-button-blue">?module=account&action=tokenlist&address={addressHash}</span>
-                  <p class="mt-3 text-dark-gray">tokenlist</p>
-                </div>
-              </div>
-              <div class="col-12 col-md col-lg">
-                <div class="p-4">
-                  <div class="d-flex gap-4 mb-5">
-                    <button class="btn api-button api-button-teal">
-                      Get
-                    </button>
-                    <button class="api-button btn api-button-blue">
-                      Post
-                    </button>
-                  </div>
-                  <div>
-                    <p class="font-weight-lighter text-sm">More detail</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="border-bottom">
-            <div class="row">
-              <div class="col-12 col-md-8 col-lg-10">
-                <div class="p-4 align-items-center">
-                  <p>Get list of blocks mined by address.</p>
-                  <span class="api-button api-button-blue">?module=account&action=tokenlist&address={addressHash}</span>
-                  <p class="mt-3 text-dark-gray">getminedblocks</p>
-                </div>
-              </div>
-              <div class="col-12 col-md col-lg">
-                <div class="p-4">
-                  <div class="d-flex gap-4 mb-5">
-                    <button class="btn api-button api-button-teal">
-                      Get
-                    </button>
-                    <button class="api-button btn api-button-blue">
-                      Post
-                    </button>
-                  </div>
-                  <div>
-                    <p class="font-weight-lighter text-sm">More detail</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="border-bottom">
-            <div class="row">
-              <div class="col-12 col-md-8 col-lg-10">
-                <div class="p-4 align-items-center">
-                  <p>
-                    Get a list of accounts and their balances, sorted
-                    ascending by the time they were first seen by the
-                    explorer.
-                  </p>
-                  <span class="api-button api-button-blue">?module=account&action=tokenlist&address={addressHash}</span>
-                  <p class="mt-3 text-dark-gray">listaccounts</p>
-                </div>
-              </div>
-              <div class="col-12 col-md col-lg">
-                <div class="p-4">
-                  <div class="d-flex gap-4 mb-5">
-                    <button class="btn api-button api-button-teal">
-                      Get
-                    </button>
-                    <button class="api-button btn api-button-blue">
-                      Post
-                    </button>
-                  </div>
-                  <div>
-                    <p class="font-weight-lighter text-sm">More detail</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+          <li class="nav-item">
+            <a class="nav-link text-secondary">
+              <img src="../../assets/icon/icon_moon.svg" alt="" />
+            </a>
+          </li>
+        </ul>
       </div>
-    </section>
-  </main>
+    </nav>
+    <!-- ======================== End header -->
 
-  <footer class="footer mt-auto">
-    <div class="px-4 py-5">
-      <div class="row">
-        <div class="col-12 col-md-12 col-lg-3 mb-2">
-          <div>
-            <h5 class="banner-hero-brand mb-3">
-              <span class="text-white">Nusa</span>
-              <span class="text-teal">Explorer</span>
-            </h5>
-            <p class="text-white">
-              Nusa<span class="text-teal">explorer</span> is a tool for
-              inspecting and analyzing EVM based blockchains. Blockchain
-              explorer for Ethereum Networks.
-            </p>
+    <main>
+      <section class="main-content">
+        <div class="layout py-5">
+          <div class="card border-0 shadow rounded-lg mb-5">
+            <div class="p-4">
+              <h4 class="font-weight-lighter mb-4">API Documentation</h4>
+              <p class="text-dark-navy">
+                [ Base URL: https://localhost:4000/api ]
+              </p>
+              <p class="text-dark-gray">
+                This API is provided for developers transitioning their
+                applications from Etherscan to BlockScout. It supports GET and
+                POST requests.
+              </p>
+            </div>
+            <div class="bg-light-gray">
+              <div class="row p-4">
+                <div class="col-12 col-md-5 col-lg-4">
+                  <div class="row mb-4">
+                    <div class="col col-md-5">
+                      <h6 class="m-0">Account</h6>
+                    </div>
+                    <div class="col-7 col-md">
+                      <span class="api-button api-button-blue"
+                        >?module=account</span
+                      >
+                    </div>
+                  </div>
+                  <div class="row mb-4">
+                    <div class="col col-md-5">
+                      <h6 class="m-0">Logs</h6>
+                    </div>
+                    <div class="col-7 col-md">
+                      <span class="api-button api-button-blue"
+                        >?module=logs</span
+                      >
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col col-md-5">
+                      <h6 class="m-0">Token</h6>
+                    </div>
+                    <div class="col-7 col-md">
+                      <span class="api-button api-button-blue"
+                        >?module=token</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4 mb-3">
+                  <div class="row mb-4">
+                    <div class="col col-md-5">
+                      <h6 class="m-0">Stats</h6>
+                    </div>
+                    <div class="col-7 col-md">
+                      <span class="api-button api-button-blue"
+                        >?module=stats</span
+                      >
+                    </div>
+                  </div>
+                  <div class="row mb-4">
+                    <div class="col col-md-5">
+                      <h6 class="m-0">Block</h6>
+                    </div>
+                    <div class="col-7 col-md">
+                      <span class="api-button api-button-blue"
+                        >?module=blocks</span
+                      >
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col col-md-5">
+                      <h6 class="m-0">Contract</h6>
+                    </div>
+                    <div class="col-7 col-md">
+                      <span class="api-button api-button-blue"
+                        >?module=contract</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4">
+                  <div class="row">
+                    <div class="col col-md-5">
+                      <h6 class="m-0">Transaction</h6>
+                    </div>
+                    <div class="col-7 col-md">
+                      <span class="api-button api-button-blue"
+                        >?module=transaction</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card border-0 shadow rounded-lg">
+            <div class="border-bottom p-4">
+              <div class="d-flex align-items-center gap-3">
+                <h5 class="font-weight-lighter m-0">Account</h5>
+                <span class="api-button api-button-blue">?module=stats</span>
+              </div>
+            </div>
+            <div class="border-bottom">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-10">
+                  <div class="p-4 align-items-center">
+                    <p>
+                      Mimics Ethereum JSON RPC's eth_getBalance. Returns the
+                      balance as of the provided block (defaults to latest)
+                    </p>
+                    <span class="api-button api-button-blue"
+                      >?module=account&action=eth_get_balance&address={addressHash}</span
+                    >
+                    <p class="mt-3 text-dark-gray">eth_get_balance</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md col-lg">
+                  <div class="p-4">
+                    <div class="d-flex gap-4 mb-5">
+                      <button class="btn api-button api-button-teal">
+                        Get
+                      </button>
+                      <button class="api-button btn api-button-blue">
+                        Post
+                      </button>
+                    </div>
+                    <div>
+                      <p class="font-weight-lighter text-sm">More detail</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-bottom">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-10">
+                  <div class="p-4 align-items-center">
+                    <p>
+                      Get balance for address. Also available through a GraphQL
+                      'addresses' query. If the balance hasn't been updated in a
+                      long time, we will double check with the node to fetch the
+                      absolute latest balance. This will not be reflected in the
+                      current request, but once it is updated, subsequent
+                      requests will show the updated balance. If you want to
+                      know whether or not we are checking for another balance,
+                      use the `balancemulti` action. That contains a property
+                      called `stale` that will let you know to recheck that
+                      balance in the near future.
+                    </p>
+                    <span class="api-button api-button-blue"
+                      >?module=account&action=eth_get_balance&address={addressHash}</span
+                    >
+                    <p class="mt-3 text-dark-gray">balance</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md col-lg">
+                  <div class="p-4">
+                    <div class="d-flex gap-4 mb-5">
+                      <button class="btn api-button api-button-teal">
+                        Get
+                      </button>
+                      <button class="api-button btn api-button-blue">
+                        Post
+                      </button>
+                    </div>
+                    <div>
+                      <p class="font-weight-lighter text-sm">More detail</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-bottom">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-10">
+                  <div class="p-4 align-items-center">
+                    <p>
+                      Get balance for multiple addresses. Also available through
+                      a GraphQL 'addresses' query. If the balance hasn't been
+                      updated in a long time, we will double check with the node
+                      to fetch the absolute latest balance. This will not be
+                      reflected in the current request, but once it is updated,
+                      subsequent requests will show the updated balance. You can
+                      know that this is taking place via the `stale` attribute,
+                      which is set to `true` if a new balance is being fetched.
+                    </p>
+                    <span class="api-button api-button-blue"
+                      >?module=account&action=balancemulti&address={addressHash}</span
+                    >
+                    <p class="mt-3 text-dark-gray">balancemulti</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md col-lg">
+                  <div class="p-4">
+                    <div class="d-flex gap-4 mb-5">
+                      <button class="btn api-button api-button-teal">
+                        Get
+                      </button>
+                      <button class="api-button btn api-button-blue">
+                        Post
+                      </button>
+                    </div>
+                    <div>
+                      <p class="font-weight-lighter text-sm">More detail</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-bottom">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-10">
+                  <div class="p-4 align-items-center">
+                    <p>Get pending transactions by address.</p>
+                    <span class="api-button api-button-blue"
+                      >?module=account&action=pendingtxlist&address={addressHash}</span
+                    >
+                    <p class="mt-3 text-dark-gray">pendingtxlist</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md col-lg">
+                  <div class="p-4">
+                    <div class="d-flex gap-4 mb-5">
+                      <button class="btn api-button api-button-teal">
+                        Get
+                      </button>
+                      <button class="api-button btn api-button-blue">
+                        Post
+                      </button>
+                    </div>
+                    <div>
+                      <p class="font-weight-lighter text-sm">More detail</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-bottom">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-10">
+                  <div class="p-4 align-items-center">
+                    <p>
+                      Get transactions by address. Up to a maximum of 10,000
+                      transactions. Also available through a GraphQL 'address'
+                      query.
+                    </p>
+                    <span class="api-button api-button-blue"
+                      >?module=account&action=txlist&address={addressHash}</span
+                    >
+                    <p class="mt-3 text-dark-gray">txlist</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md col-lg">
+                  <div class="p-4">
+                    <div class="d-flex gap-4 mb-5">
+                      <button class="btn api-button api-button-teal">
+                        Get
+                      </button>
+                      <button class="api-button btn api-button-blue">
+                        Post
+                      </button>
+                    </div>
+                    <div>
+                      <p class="font-weight-lighter text-sm">More detail</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-bottom">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-10">
+                  <div class="p-4 align-items-center">
+                    <p>
+                      Get internal transactions by transaction or address hash.
+                      Up to a maximum of 10,000 internal transactions. Also
+                      available through a GraphQL 'transaction' query.
+                    </p>
+                    <span class="api-button api-button-blue"
+                      >?module=account&action=txlistinternal&address={addressHash}</span
+                    >
+                    <p class="mt-3 text-dark-gray">txlistinternal</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md col-lg">
+                  <div class="p-4">
+                    <div class="d-flex gap-4 mb-5">
+                      <button class="btn api-button api-button-teal">
+                        Get
+                      </button>
+                      <button class="api-button btn api-button-blue">
+                        Post
+                      </button>
+                    </div>
+                    <div>
+                      <p class="font-weight-lighter text-sm">More detail</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-bottom">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-10">
+                  <div class="p-4 align-items-center">
+                    <p>Get token account balance for token contract address.</p>
+                    <span class="api-button api-button-blue"
+                      >?module=account&action=tokenbalance&address={addressHash}</span
+                    >
+                    <p class="mt-3 text-dark-gray">tokenbalance</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md col-lg">
+                  <div class="p-4">
+                    <div class="d-flex gap-4 mb-5">
+                      <button class="btn api-button api-button-teal">
+                        Get
+                      </button>
+                      <button class="api-button btn api-button-blue">
+                        Post
+                      </button>
+                    </div>
+                    <div>
+                      <p class="font-weight-lighter text-sm">More detail</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-bottom">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-10">
+                  <div class="p-4 align-items-center">
+                    <p>Get list of tokens owned by address.</p>
+                    <span class="api-button api-button-blue"
+                      >?module=account&action=tokenlist&address={addressHash}</span
+                    >
+                    <p class="mt-3 text-dark-gray">tokenlist</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md col-lg">
+                  <div class="p-4">
+                    <div class="d-flex gap-4 mb-5">
+                      <button class="btn api-button api-button-teal">
+                        Get
+                      </button>
+                      <button class="api-button btn api-button-blue">
+                        Post
+                      </button>
+                    </div>
+                    <div>
+                      <p class="font-weight-lighter text-sm">More detail</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-bottom">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-10">
+                  <div class="p-4 align-items-center">
+                    <p>Get list of blocks mined by address.</p>
+                    <span class="api-button api-button-blue"
+                      >?module=account&action=tokenlist&address={addressHash}</span
+                    >
+                    <p class="mt-3 text-dark-gray">getminedblocks</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md col-lg">
+                  <div class="p-4">
+                    <div class="d-flex gap-4 mb-5">
+                      <button class="btn api-button api-button-teal">
+                        Get
+                      </button>
+                      <button class="api-button btn api-button-blue">
+                        Post
+                      </button>
+                    </div>
+                    <div>
+                      <p class="font-weight-lighter text-sm">More detail</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-bottom">
+              <div class="row">
+                <div class="col-12 col-md-8 col-lg-10">
+                  <div class="p-4 align-items-center">
+                    <p>
+                      Get a list of accounts and their balances, sorted
+                      ascending by the time they were first seen by the
+                      explorer.
+                    </p>
+                    <span class="api-button api-button-blue"
+                      >?module=account&action=tokenlist&address={addressHash}</span
+                    >
+                    <p class="mt-3 text-dark-gray">listaccounts</p>
+                  </div>
+                </div>
+                <div class="col-12 col-md col-lg">
+                  <div class="p-4">
+                    <div class="d-flex gap-4 mb-5">
+                      <button class="btn api-button api-button-teal">
+                        Get
+                      </button>
+                      <button class="api-button btn api-button-blue">
+                        Post
+                      </button>
+                    </div>
+                    <div>
+                      <p class="font-weight-lighter text-sm">More detail</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-12 col-md-12 col-lg-9">
-          <div class="row">
-            <div class="col-12 col-md-3 col-xl-3 mb-2">
-              <h6 class="text-white">Nusaexplorer</h6>
-              <div class="pl-3">
-                <ul>
-                  <li class="text-white mb-2 text-sm">Submit an Issue</li>
-                  <li class="text-white mb-2 text-sm">Contribute</li>
-                  <li class="text-white mb-2 text-sm">Chat (#blockscout)</li>
-                  <li class="text-white mb-2 text-sm">Discussions</li>
-                  <li class="text-white mb-2 text-sm">Staking stats</li>
-                  <li class="text-white mb-2 text-sm">
-                    Gnosis Chain Usage stats
-                  </li>
-                  <li class="text-white mb-2 text-sm">
-                    <span>Add Gnosis Chain</span>
-                  </li>
-                </ul>
-              </div>
+      </section>
+    </main>
+
+    <footer class="footer mt-auto">
+      <div class="px-4 py-5">
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-3 mb-2">
+            <div>
+              <h5 class="banner-hero-brand mb-3">
+                <span class="text-white">Nusa</span>
+                <span class="text-teal">Explorer</span>
+              </h5>
+              <p class="text-white">
+                Nusa<span class="text-teal">explorer</span> is a tool for
+                inspecting and analyzing EVM based blockchains. Blockchain
+                explorer for Ethereum Networks.
+              </p>
             </div>
-            <div class="col-12 col-md-3 col-xl-3 mb-2">
-              <h6 class="text-white">Main Networks</h6>
-              <div class="pl-3">
-                <ul>
-                  <li class="text-white mb-2 text-sm">Ethereum</li>
-                  <li class="text-white mb-2 text-sm">Ethereum Classic</li>
-                  <li class="text-white mb-2 text-sm">
-                    Optimism on Gnosis Chain
-                  </li>
-                  <li class="text-white mb-2 text-sm">POA</li>
-                  <li class="text-white mb-2 text-sm">RSK</li>
-                  <li class="text-white mb-2 text-sm">ARTIS Σ</li>
-                  <li class="text-white mb-2 text-sm">
-                    <span>LUKSO L14</span>
-                  </li>
-                </ul>
+          </div>
+          <div class="col-12 col-md-12 col-lg-9">
+            <div class="row">
+              <div class="col-12 col-md-3 col-xl-3 mb-2">
+                <h6 class="text-white">Nusaexplorer</h6>
+                <div class="pl-3">
+                  <ul>
+                    <li class="text-white mb-2 text-sm">Submit an Issue</li>
+                    <li class="text-white mb-2 text-sm">Contribute</li>
+                    <li class="text-white mb-2 text-sm">Chat (#blockscout)</li>
+                    <li class="text-white mb-2 text-sm">Discussions</li>
+                    <li class="text-white mb-2 text-sm">Staking stats</li>
+                    <li class="text-white mb-2 text-sm">
+                      Gnosis Chain Usage stats
+                    </li>
+                    <li class="text-white mb-2 text-sm">
+                      <span>Add Gnosis Chain</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="col-12 col-md-3 col-xl-3 mb-2">
-              <h6 class="text-white">API's</h6>
-              <div class="pl-3">
-                <ul>
-                  <li class="text-white mb-2 text-sm">GraphQL</li>
-                  <li class="text-white mb-2 text-sm">RPC</li>
-                  <li class="text-white mb-2 text-sm">ETH RPC</li>
-                </ul>
+              <div class="col-12 col-md-3 col-xl-3 mb-2">
+                <h6 class="text-white">Main Networks</h6>
+                <div class="pl-3">
+                  <ul>
+                    <li class="text-white mb-2 text-sm">Ethereum</li>
+                    <li class="text-white mb-2 text-sm">Ethereum Classic</li>
+                    <li class="text-white mb-2 text-sm">
+                      Optimism on Gnosis Chain
+                    </li>
+                    <li class="text-white mb-2 text-sm">POA</li>
+                    <li class="text-white mb-2 text-sm">RSK</li>
+                    <li class="text-white mb-2 text-sm">ARTIS Σ</li>
+                    <li class="text-white mb-2 text-sm">
+                      <span>LUKSO L14</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="col-12 col-md-3 col-xl-3 mb-2">
-              <h6 class="text-white">Bridges</h6>
-              <div class="pl-3">
-                <ul>
-                  <li class="text-white mb-2 text-sm">xDai Bridge</li>
-                  <li class="text-white mb-2 text-sm">Omni Bridge</li>
-                  <li class="text-white mb-2 text-sm">Binance Bridge</li>
-                  <li class="text-white mb-2 text-sm">xDai Bridge Stats</li>
-                  <li class="text-white mb-2 text-sm">Omni Stats</li>
-                  <li class="text-white mb-2 text-sm">Omni Stable Stats</li>
-                  <li class="text-white mb-2 text-sm">
-                    Omni AMB Live Monitor
-                  </li>
-                  <li class="text-white mb-2 text-sm">
-                    Binance AMB Live Monitor
-                  </li>
-                </ul>
+              <div class="col-12 col-md-3 col-xl-3 mb-2">
+                <h6 class="text-white">API's</h6>
+                <div class="pl-3">
+                  <ul>
+                    <li class="text-white mb-2 text-sm">GraphQL</li>
+                    <li class="text-white mb-2 text-sm">RPC</li>
+                    <li class="text-white mb-2 text-sm">ETH RPC</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-3 col-xl-3 mb-2">
+                <h6 class="text-white">Bridges</h6>
+                <div class="pl-3">
+                  <ul>
+                    <li class="text-white mb-2 text-sm">xDai Bridge</li>
+                    <li class="text-white mb-2 text-sm">Omni Bridge</li>
+                    <li class="text-white mb-2 text-sm">Binance Bridge</li>
+                    <li class="text-white mb-2 text-sm">xDai Bridge Stats</li>
+                    <li class="text-white mb-2 text-sm">Omni Stats</li>
+                    <li class="text-white mb-2 text-sm">Omni Stable Stats</li>
+                    <li class="text-white mb-2 text-sm">
+                      Omni AMB Live Monitor
+                    </li>
+                    <li class="text-white mb-2 text-sm">
+                      Binance AMB Live Monitor
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-  integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"
+  ></script>
 </html>

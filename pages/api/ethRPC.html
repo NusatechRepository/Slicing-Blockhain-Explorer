@@ -1,392 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="api.styles.css" />
+    <title>Blocks Page</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
-  <link rel="stylesheet" href="../../styles/global.css" />
-  <link rel="stylesheet" href="api.styles.css" />
-  <title>Blocks Page</title>
-</head>
+  <body>
+    <!-- ================== Header ============ -->
+    <nav class="navbar navbar-expand-lg navbar-light py-2">
+      <a class="navbar-brand" href="../../index.html">
+        <img src="../../assets/images/logo.png" alt="" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<body>
-  <!-- ================== Header ============ -->
-  <nav class="navbar navbar-expand-lg navbar-light mx-4 py-2">
-    <a class="navbar-brand" href="../../index.html">
-      <img src="../../assets/images/logo.png" alt="" />
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto navbar-item-menu">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle navbar-item" href="#" role="button" data-toggle="dropdown"
-            aria-expanded="false">
-            <img src="../../assets/icon/icon_blockchain.svg" alt="" />
-            <span class="ml-2"> Block </span>
-          </a>
-          <div class="dropdown-menu p-2">
-            <a class="dropdown-item text-dark-gray" href="../blocks/blocks.html">Blocks</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="../uncles/uncles.html">Uncless</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="../reogs/reogs.html">Forked Blocks (Reorgs)</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="#">Verifed Contract</a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle navbar-item" href="#" role="button" data-toggle="dropdown"
-            aria-expanded="false">
-            <img src="../../assets/icon/icon_nav_transaction.svg" alt="" />
-            <span class="ml-2 navbar-link">Transaction</span>
-          </a>
-          <div class="dropdown-menu p-2">
-            <a class="dropdown-item text-dark-gray" href="../validated/validated.html">Validated</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="#">Pending</a>
-          </div>
-        </li>
-
-        <li class="nav-item">
-          <a href="../account/account.html" class="nav-link text-secondary navbar-item">
-            <img src="../../assets/icon/icon_user_outline.svg" alt="" />
-            <span class="navbar-link ml-2">Accounts</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a href="../tokens/tokens.html" class="nav-link text-secondary navbar-item">
-            <img src="../../assets/icon/icon_coin_stack.svg" alt="" />
-            <span class="navbar-link ml-2">Tokens</span>
-          </a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle navbar-item active" href="#" role="button" data-toggle="dropdown"
-            aria-expanded="false">
-            <img src="../../assets/icon/icon_api.svg" alt="" />
-            <span class="ml-2 navbar-link"> API's </span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-left p-2">
-            <a class="dropdown-item text-dark-gray" href="#">GraphQL</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="RPC.html">RPC</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark-gray" href="ethRPC.html">ETH RPC</a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-            <img class="" src="../../assets/icon/dot.svg" alt="" />
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg-right p-3">
-            <div>Mainnets</div>
-            <a class="dropdown-item text-center text-dark-gray" href="#">
-              Mainets
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto navbar-item-menu">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle navbar-item"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../../assets/icon/icon_blockchain.svg" alt="" />
+              <span class="ml-2"> Block </span>
             </a>
-            <div class="dropdown-divider"></div>
-            <div>Testnet</div>
-            <a class="dropdown-item text-center text-dark-gray" href="#">
-              Testnet
+            <div class="dropdown-menu p-2">
+              <a
+                class="dropdown-item text-dark-gray"
+                href="../blocks/blocks.html"
+                >Blocks</a
+              >
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item text-dark-gray"
+                href="../uncles/uncles.html"
+                >Uncless</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="../reogs/reogs.html"
+                >Forked Blocks (Reorgs)</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="#"
+                >Verifed Contract</a
+              >
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle navbar-item"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../../assets/icon/icon_nav_transaction.svg" alt="" />
+              <span class="ml-2 navbar-link">Transaction</span>
             </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-center" href="#"> Other Networks </a>
+            <div class="dropdown-menu p-2">
+              <a
+                class="dropdown-item text-dark-gray"
+                href="../validated/validated.html"
+                >Validated</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="#">Pending</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a
+              href="../account/account.html"
+              class="nav-link text-secondary navbar-item"
+            >
+              <img src="../../assets/icon/icon_user_outline.svg" alt="" />
+              <span class="navbar-link ml-2">Accounts</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              href="../tokens/tokens.html"
+              class="nav-link text-secondary navbar-item"
+            >
+              <img src="../../assets/icon/icon_coin_stack.svg" alt="" />
+              <span class="navbar-link ml-2">Tokens</span>
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle navbar-item active"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="../../assets/icon/icon_api.svg" alt="" />
+              <span class="ml-2 navbar-link"> API's </span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-left p-2">
+              <a class="dropdown-item text-dark-gray" href="#">GraphQL</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="RPC.html">RPC</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-dark-gray" href="ethRPC.html"
+                >ETH RPC</a
+              >
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img class="" src="../../assets/icon/dot.svg" alt="" />
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg-right p-3">
+              <div>Mainnets</div>
+              <a class="dropdown-item text-center text-dark-gray" href="#">
+                Mainets
+              </a>
+              <div class="dropdown-divider"></div>
+              <div>Testnet</div>
+              <a class="dropdown-item text-center text-dark-gray" href="#">
+                Testnet
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-center" href="#"> Other Networks </a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-secondary">
+              <img src="../../assets/icon/icon_moon.svg" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- ======================== End header -->
+
+    <main>
+      <section class="main-content">
+        <div class="layout py-5">
+          <div class="card border-0 shadow rounded-lg mb-5">
+            <div class="p-4">
+              <h4 class="font-weight-lighter mb-4">
+                ETH RPC API Documentation
+              </h4>
+              <p class="text-dark-navy">
+                [ Base URL: https://localhost:4000/api ]
+              </p>
+              <p class="text-dark-gray">
+                This API is provided to support some rpc methods in the exact
+                format specified for ethereum nodes, which can be found here.
+                This is useful to allow sending requests to blockscout without
+                having to change anything about the request. However, in
+                general, the custom RPC is recommended. Anything not in this
+                list is not supported. Click on the method to be taken to the
+                documentation for that method, and check the notes section for
+                any potential differences.
+              </p>
+            </div>
           </div>
-        </li>
+          <div class="card border-0 shadow rounded-lg">
+            <div class="border-bottom">
+              <div class="row">
+                <div class="col-12 col-sm-11 col-md-9">
+                  <div class="p-4 align-items-center w-f">
+                    <h5 class="mb-4">eht_blockNumber</h5>
+                    <span class="api-button api-button-blue mb-5"
+                      >curl -X POST --data '{"id":0,"jsonrpc":"2.0","method":
+                      "eth_blockNumber","params": []}'</span
+                    >
 
-        <li class="nav-item">
-          <a class="nav-link text-secondary">
-            <img src="../../assets/icon/icon_moon.svg" alt="" />
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- ======================== End header -->
+                    <div
+                      class="card mt-4 border-0 rounded-lg bg-light-gray p-3"
+                    >
+                      <pre id="ethBlock" class="text-dark-gray"></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="col col-sm col-md d-flex justify-content-center">
+                  <div class="p-4 d-flex flex-column">
+                    <div class="mb-auto">
+                      <button class="api-button btn api-button-blue px-4">
+                        Post
+                      </button>
+                    </div>
+                    <div>
+                      <p class="font-weight-lighter text-dark-gray">
+                        More detail
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-bottom">
+              <div class="row">
+                <div class="col-10">
+                  <div class="p-4 align-items-center w-f">
+                    <h5 class="mb-4">eht_getBalance</h5>
+                    <p class="text-dark-gray text-sm">
+                      The `earliest` parameter will not work as expected
+                      currently, because genesis block balances are not
+                      currently imported
+                    </p>
+                    <span class="api-button api-button-blue mb-5"
+                      >curl -X POST --data '{"id":0,"jsonrpc":"2.0","method":
+                      "eth_blockNumber","params": []}'</span
+                    >
 
-  <main>
-    <section class="main-content">
-      <div class="layout py-5">
+                    <div
+                      class="card mt-4 border-0 rounded-lg bg-light-gray p-3"
+                    >
+                      <pre id="ethBalance" class="text-dark-gray"></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center">
+                  <div class="p-4 d-flex flex-column">
+                    <div class="mb-auto">
+                      <button class="api-button btn api-button-blue px-4">
+                        Post
+                      </button>
+                    </div>
+                    <div>
+                      <p class="font-weight-lighter text-dark-gray">
+                        More detail
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-bottom">
+              <div class="row">
+                <div class="col-10">
+                  <div class="p-4 align-items-center w-f">
+                    <h5 class="mb-4">eht_getLost</h5>
+                    <p class="text-dark-gray text-sm">
+                      Will never return more than 1000 log entries. For this
+                      reason, you can use pagination options to request the next
+                      page. Pagination options params: {"logIndex": "3D",
+                      "blockNumber": "6423AC", "transactionIndex": 53} which
+                      include parameters from the last log received from the
+                      previous request. These three parameters are required for
+                      pagination.
+                    </p>
+                    <span class="api-button api-button-blue mb-5"
+                      >curl -X POST --data '{"id":0,"jsonrpc":"2.0","method":
+                      "eth_getLogs","params": []}'</span
+                    >
 
-        <div class="card border-0 shadow rounded-lg mb-5">
-          <div class="p-4">
-            <h4 class="font-weight-lighter mb-4">
-              ETH RPC API Documentation
-            </h4>
-            <p class="text-dark-navy">
-              [ Base URL: https://localhost:4000/api ]
-            </p>
-            <p class="text-dark-gray">
-              This API is provided to support some rpc methods in the exact
-              format specified for ethereum nodes, which can be found here.
-              This is useful to allow sending requests to blockscout without
-              having to change anything about the request. However, in
-              general, the custom RPC is recommended. Anything not in this
-              list is not supported. Click on the method to be taken to the
-              documentation for that method, and check the notes section for
-              any potential differences.
-            </p>
+                    <div
+                      class="card mt-4 border-0 rounded-lg bg-light-gray p-3"
+                    >
+                      <pre id="ethLogs" class="text-dark-gray"></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center">
+                  <div class="p-4 d-flex flex-column">
+                    <div class="mb-auto">
+                      <button class="api-button btn api-button-blue px-4">
+                        Post
+                      </button>
+                    </div>
+                    <div>
+                      <p class="font-weight-lighter text-dark-gray">
+                        More detail
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card border-0 shadow rounded-lg">
-          <div class="border-bottom">
-            <div class="row">
-              <div class="col-12 col-sm-11 col-md-9">
-                <div class="p-4 align-items-center w-f">
-                  <h5 class="mb-4">eht_blockNumber</h5>
-                  <span class="api-button api-button-blue mb-5">curl -X POST --data '{"id":0,"jsonrpc":"2.0","method":
-                    "eth_blockNumber","params": []}'</span>
+      </section>
+    </main>
 
-                  <div class="card mt-4 border-0 rounded-lg bg-light-gray p-3">
-                    <pre id="ethBlock" class="text-dark-gray"></pre>
-                  </div>
-                </div>
-              </div>
-              <div class="col col-sm col-md d-flex justify-content-center">
-                <div class="p-4 d-flex flex-column">
-                  <div class="mb-auto">
-                    <button class="api-button btn api-button-blue px-4">
-                      Post
-                    </button>
-                  </div>
-                  <div>
-                    <p class="font-weight-lighter text-dark-gray">
-                      More detail
-                    </p>
-                  </div>
-                </div>
-              </div>
+    <footer class="footer mt-auto">
+      <div class="px-4 py-5">
+        <div class="d-flex">
+          <div class="col-3">
+            <h5 class="banner-hero-brand mb-3">
+              <span class="text-white">Nusa</span>
+              <span class="text-teal">Explorer</span>
+            </h5>
+            <p class="text-white">
+              Nusa<span class="text-teal">explorer</span> is a tool for
+              inspecting and analyzing EVM based blockchains. Blockchain
+              explorer for Ethereum Networks.
+            </p>
+          </div>
+          <div class="col-2">
+            <h6 class="text-white">Nusaexplorer</h6>
+            <div class="pl-3">
+              <ul>
+                <li class="text-white mb-2 text-sm">Submit an Issue</li>
+                <li class="text-white mb-2 text-sm">Contribute</li>
+                <li class="text-white mb-2 text-sm">Chat (#blockscout)</li>
+                <li class="text-white mb-2 text-sm">Discussions</li>
+                <li class="text-white mb-2 text-sm">Staking stats</li>
+                <li class="text-white mb-2 text-sm">
+                  Gnosis Chain Usage stats
+                </li>
+                <li class="text-white mb-2 text-sm">
+                  <span>Add Gnosis Chain</span>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="border-bottom">
-            <div class="row">
-              <div class="col-10">
-                <div class="p-4 align-items-center w-f">
-                  <h5 class="mb-4">eht_getBalance</h5>
-                  <p class="text-dark-gray text-sm">
-                    The `earliest` parameter will not work as expected
-                    currently, because genesis block balances are not
-                    currently imported
-                  </p>
-                  <span class="api-button api-button-blue mb-5">curl -X POST --data '{"id":0,"jsonrpc":"2.0","method":
-                    "eth_blockNumber","params": []}'</span>
-
-                  <div class="card mt-4 border-0 rounded-lg bg-light-gray p-3">
-                    <pre id="ethBalance" class="text-dark-gray"></pre>
-                  </div>
-                </div>
-              </div>
-              <div class="col-2 d-flex justify-content-center">
-                <div class="p-4 d-flex flex-column">
-                  <div class="mb-auto">
-                    <button class="api-button btn api-button-blue px-4">
-                      Post
-                    </button>
-                  </div>
-                  <div>
-                    <p class="font-weight-lighter text-dark-gray">
-                      More detail
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div class="col-2">
+            <h6 class="text-white">Main Networks</h6>
+            <div class="pl-3">
+              <ul>
+                <li class="text-white mb-2 text-sm">Ethereum</li>
+                <li class="text-white mb-2 text-sm">Ethereum Classic</li>
+                <li class="text-white mb-2 text-sm">
+                  Optimism on Gnosis Chain
+                </li>
+                <li class="text-white mb-2 text-sm">POA</li>
+                <li class="text-white mb-2 text-sm">RSK</li>
+                <li class="text-white mb-2 text-sm">ARTIS Σ</li>
+                <li class="text-white mb-2 text-sm">
+                  <span>LUKSO L14</span>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="border-bottom">
-            <div class="row">
-              <div class="col-10">
-                <div class="p-4 align-items-center w-f">
-                  <h5 class="mb-4">eht_getLost</h5>
-                  <p class="text-dark-gray text-sm">
-                    Will never return more than 1000 log entries. For this
-                    reason, you can use pagination options to request the
-                    next page. Pagination options params: {"logIndex": "3D",
-                    "blockNumber": "6423AC", "transactionIndex": 53} which
-                    include parameters from the last log received from the
-                    previous request. These three parameters are required
-                    for pagination.
-                  </p>
-                  <span class="api-button api-button-blue mb-5">curl -X POST --data '{"id":0,"jsonrpc":"2.0","method":
-                    "eth_getLogs","params": []}'</span>
-
-                  <div class="card mt-4 border-0 rounded-lg bg-light-gray p-3">
-                    <pre id="ethLogs" class="text-dark-gray"></pre>
-                  </div>
-                </div>
-              </div>
-              <div class="col-2 d-flex justify-content-center">
-                <div class="p-4 d-flex flex-column">
-                  <div class="mb-auto">
-                    <button class="api-button btn api-button-blue px-4">
-                      Post
-                    </button>
-                  </div>
-                  <div>
-                    <p class="font-weight-lighter text-dark-gray">
-                      More detail
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div class="col-2">
+            <h6 class="text-white">API's</h6>
+            <div class="pl-3">
+              <ul>
+                <li class="text-white mb-2 text-sm">GraphQL</li>
+                <li class="text-white mb-2 text-sm">RPC</li>
+                <li class="text-white mb-2 text-sm">ETH RPC</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-2">
+            <h6 class="text-white">Bridges</h6>
+            <div class="pl-3">
+              <ul>
+                <li class="text-white mb-2 text-sm">xDai Bridge</li>
+                <li class="text-white mb-2 text-sm">Omni Bridge</li>
+                <li class="text-white mb-2 text-sm">Binance Bridge</li>
+                <li class="text-white mb-2 text-sm">xDai Bridge Stats</li>
+                <li class="text-white mb-2 text-sm">Omni Stats</li>
+                <li class="text-white mb-2 text-sm">Omni Stable Stats</li>
+                <li class="text-white mb-2 text-sm">Omni AMB Live Monitor</li>
+                <li class="text-white mb-2 text-sm">
+                  Binance AMB Live Monitor
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"
+  ></script>
 
-    </section>
-  </main>
+  <script>
+    const dataEthBlock = {
+      id: 0,
+      jsonrpc: "2.0",
+      method: "eth_blockNumber",
+      params: [],
+    };
 
-  <footer class="footer mt-auto">
-    <div class="px-4 py-5">
-      <div class="d-flex">
-        <div class="col-3">
-          <h5 class="banner-hero-brand mb-3">
-            <span class="text-white">Nusa</span>
-            <span class="text-teal">Explorer</span>
-          </h5>
-          <p class="text-white">
-            Nusa<span class="text-teal">explorer</span> is a tool for
-            inspecting and analyzing EVM based blockchains. Blockchain
-            explorer for Ethereum Networks.
-          </p>
-        </div>
-        <div class="col-2">
-          <h6 class="text-white">Nusaexplorer</h6>
-          <div class="pl-3">
-            <ul>
-              <li class="text-white mb-2 text-sm">Submit an Issue</li>
-              <li class="text-white mb-2 text-sm">Contribute</li>
-              <li class="text-white mb-2 text-sm">Chat (#blockscout)</li>
-              <li class="text-white mb-2 text-sm">Discussions</li>
-              <li class="text-white mb-2 text-sm">Staking stats</li>
-              <li class="text-white mb-2 text-sm">
-                Gnosis Chain Usage stats
-              </li>
-              <li class="text-white mb-2 text-sm">
-                <span>Add Gnosis Chain</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-2">
-          <h6 class="text-white">Main Networks</h6>
-          <div class="pl-3">
-            <ul>
-              <li class="text-white mb-2 text-sm">Ethereum</li>
-              <li class="text-white mb-2 text-sm">Ethereum Classic</li>
-              <li class="text-white mb-2 text-sm">
-                Optimism on Gnosis Chain
-              </li>
-              <li class="text-white mb-2 text-sm">POA</li>
-              <li class="text-white mb-2 text-sm">RSK</li>
-              <li class="text-white mb-2 text-sm">ARTIS Σ</li>
-              <li class="text-white mb-2 text-sm">
-                <span>LUKSO L14</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-2">
-          <h6 class="text-white">API's</h6>
-          <div class="pl-3">
-            <ul>
-              <li class="text-white mb-2 text-sm">GraphQL</li>
-              <li class="text-white mb-2 text-sm">RPC</li>
-              <li class="text-white mb-2 text-sm">ETH RPC</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-2">
-          <h6 class="text-white">Bridges</h6>
-          <div class="pl-3">
-            <ul>
-              <li class="text-white mb-2 text-sm">xDai Bridge</li>
-              <li class="text-white mb-2 text-sm">Omni Bridge</li>
-              <li class="text-white mb-2 text-sm">Binance Bridge</li>
-              <li class="text-white mb-2 text-sm">xDai Bridge Stats</li>
-              <li class="text-white mb-2 text-sm">Omni Stats</li>
-              <li class="text-white mb-2 text-sm">Omni Stable Stats</li>
-              <li class="text-white mb-2 text-sm">Omni AMB Live Monitor</li>
-              <li class="text-white mb-2 text-sm">
-                Binance AMB Live Monitor
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-  integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    const dataEthBalace = {
+      id: 0,
+      jsonrpc: "2.0",
+      method: "eth_getBalance",
+      params: ["0x0000000000000000000000000000000000000007"],
+      latest: "",
+    };
 
-<script>
-  const dataEthBlock = {
-    id: 0,
-    jsonrpc: "2.0",
-    method: "eth_blockNumber",
-    params: [],
-  };
-
-  const dataEthBalace = {
-    id: 0,
-    jsonrpc: "2.0",
-    method: "eth_getBalance",
-    params: ["0x0000000000000000000000000000000000000007"],
-    latest: "",
-  };
-
-  const dataEthLogs = {
-    id: 0,
-    jsonrpc: "2.0",
-    method: "eth_getLogs",
-    params: [
-      {
-        address: "0xc78Be425090Dbd437532594D12267C5934Cc6c6f",
-        paging_options: {
-          logIndex: "3D",
-          blockNumber: "6423AC",
-          transactionIndex: 53,
+    const dataEthLogs = {
+      id: 0,
+      jsonrpc: "2.0",
+      method: "eth_getLogs",
+      params: [
+        {
+          address: "0xc78Be425090Dbd437532594D12267C5934Cc6c6f",
+          paging_options: {
+            logIndex: "3D",
+            blockNumber: "6423AC",
+            transactionIndex: 53,
+          },
+          fromBlock: "earliest",
+          toBlock: "latest",
+          topics: [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+          ],
         },
-        fromBlock: "earliest",
-        toBlock: "latest",
-        topics: [
-          "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-        ],
-      },
-    ],
-  };
+      ],
+    };
 
-  document.getElementById("ethBlock").innerHTML = JSON.stringify(
-    dataEthBlock,
-    null,
-    5
-  );
+    document.getElementById("ethBlock").innerHTML = JSON.stringify(
+      dataEthBlock,
+      null,
+      5
+    );
 
-  document.getElementById("ethBalance").innerHTML = JSON.stringify(
-    dataEthBalace,
-    null,
-    5
-  );
+    document.getElementById("ethBalance").innerHTML = JSON.stringify(
+      dataEthBalace,
+      null,
+      5
+    );
 
-  document.getElementById("ethLogs").innerHTML = JSON.stringify(
-    dataEthLogs,
-    null,
-    5
-  );
-</script>
-
+    document.getElementById("ethLogs").innerHTML = JSON.stringify(
+      dataEthLogs,
+      null,
+      5
+    );
+  </script>
 </html>
